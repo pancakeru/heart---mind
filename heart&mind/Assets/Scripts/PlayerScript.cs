@@ -17,6 +17,9 @@ public class PlayerScript : MonoBehaviour
     private bool jump = false;
     private float jumpPower;
 
+    //appearance vars
+    private Vector3 currentScale;
+
 
     void Start()
     {
@@ -33,6 +36,9 @@ public class PlayerScript : MonoBehaviour
 
         //initializing jump vars
         jumpPower = 25000 * Time.deltaTime;
+
+        //store the current scale
+        currentScale = this.transform.localScale;
     }
 
     // Update is called once per frame
@@ -41,11 +47,15 @@ public class PlayerScript : MonoBehaviour
         //move right and left
         if (Input.GetKey(KeyCode.D)) {
             rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
+            currentScale.x = 1;
         }
 
         if (Input.GetKey(KeyCode.A)) {
             rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
+            currentScale.x = -1;
         }
+
+        transform.localScale = currentScale;
 
         //clamping horizontal speed
         if (Mathf.Abs(rb.velocity.x) > maxSpeed) {
