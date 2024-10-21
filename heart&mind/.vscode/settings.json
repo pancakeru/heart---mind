@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Heart and Mind POC.sln"
+    "dotnet.defaultSolution": "heart_mind.sln"
 }
