@@ -25,6 +25,9 @@ public class PlayerScript : MonoBehaviour
         mySprite = this.GetComponent<SpriteRenderer>();
         myAnim = this.GetComponent<Animator>();
 
+        //lock the z orientation (so bro doesnt go upside down)
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
         //initializing movement vars
         moveSpeed = 300 * Time.deltaTime;
 
