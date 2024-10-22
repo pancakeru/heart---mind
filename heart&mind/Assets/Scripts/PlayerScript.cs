@@ -10,12 +10,14 @@ public class PlayerScript : MonoBehaviour
     private Animator myAnim;
 
     //movement vars
-    public float moveSpeed; //how fast player moves
-    public float maxSpeed; //max horizontal speed
+    [SerializeField] float moveSpeed; //how fast player moves
+    [SerializeField] float maxSpeed; //max horizontal speed
+
+    
 
     //jumping vars
     private bool jump = false;
-    public float jumpPower;
+    [SerializeField] float jumpPower;
 
     //appearance vars
     private Vector3 currentScale;
