@@ -26,7 +26,7 @@ public class CameraScript : MonoBehaviour
         yPos = this.transform.position.y;
 
         //store initial y pos difference between camera and player
-        yDiff = Mathf.Abs(yPos - playerPos.position.y); 
+        yDiff = yPos - playerPos.position.y; 
         
     }
 

@@ -10,12 +10,12 @@ public class PlayerScript : MonoBehaviour
     private Animator myAnim;
 
     //movement vars
-    private float moveSpeed; //how fast player moves
-    private float maxSpeed = 5.5f; //max horizontal speed
+    public float moveSpeed; //how fast player moves
+    public float maxSpeed; //max horizontal speed
 
     //jumping vars
     private bool jump = false;
-    private float jumpPower;
+    public float jumpPower;
 
     //appearance vars
     private Vector3 currentScale;
@@ -32,10 +32,10 @@ public class PlayerScript : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         //initializing movement vars
-        moveSpeed = 300 * Time.deltaTime;
+        moveSpeed *= Time.deltaTime;
 
         //initializing jump vars
-        jumpPower = 25000 * Time.deltaTime;
+        jumpPower *= Time.deltaTime;
 
         //store the current scale
         currentScale = this.transform.localScale;
