@@ -16,12 +16,6 @@ public class CameraScript : MonoBehaviour
     private float yOffset = 3f;
     private float lerpSpeed = 2f; //lerp speed to adjust camera
 
-    //camera x position control var
-    private float xPos;
-    private float xDiff; //store initial y pos offset between camera and player
-
-    //var to determine when to adjust y pos
-    private float xOffset = 3f;
 
     void Start()
     {
@@ -29,13 +23,8 @@ public class CameraScript : MonoBehaviour
         playerObj = GameObject.FindWithTag("Player");
         playerPos = playerObj.GetComponent<Transform>();
 
-        //store initial y and x position
-        yPos = this.transform.position.y;
-        xPos= this.transform.position.x;
-
         //store initial y and x pos difference between camera and player
         yDiff = yPos - playerPos.position.y; 
-        xDiff = xPos - playerPos.position.x;
     }
 
     void Update()
