@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Tilemaps;
 
 public class HeartMechanics : MonoBehaviour
 {
@@ -19,6 +22,7 @@ public class HeartMechanics : MonoBehaviour
 
     private bool shrunk = false;
     private bool grown = false;
+    private bool resetting = false;
     
     private PlayerScript movementScript;
 
@@ -36,11 +40,9 @@ public class HeartMechanics : MonoBehaviour
     void Update()
     {
         //if player not in the zone and they are small size
-        if (!inZone && calmLevel > 0) {
+        if (!inZone && calmLevel > 0 || angyLevel > 0) {
             //grace period of lasting effect
             activeDuration -= 1 * Time.deltaTime;
-
-            Debug.Log(mySize.localScale);
 
             //grow when period is over
             if (activeDuration <= 0) {
@@ -48,13 +50,15 @@ public class HeartMechanics : MonoBehaviour
             }
         }
 
+       // Debug.Log(angyLevel);
+
 
     }
 
     //trigger stay to check if in calm zone
     void OnTriggerStay2D(Collider2D other) {
         //if in zone and not moving, call shrink
-        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude == 0) {
+        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude == 0 && !resetting) {
             inZone = true;
             Shrink();
         }
@@ -66,6 +70,23 @@ public class HeartMechanics : MonoBehaviour
             inZone = false;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Wall")) {
+            foreach (ContactPoint2D contact in other.contacts)
+            {
+                Vector2 normal = contact.normal;
+
+                //if the collision happens horizontally
+                if (Mathf.Abs(normal.x) > Mathf.Abs(normal.y) && angyLevel < 60f && !resetting)
+                {
+                    Grow();
+                    activeDuration = 3;
+                }
+            }
+        }
+    }
+
 
     //function for shrinking
     void Shrink() {
@@ -85,19 +106,42 @@ public class HeartMechanics : MonoBehaviour
  
             calmLevel += 2 * Time.deltaTime;
 
+           if (mySize.localScale.y < 1) {
             shrunk = true;
-           // Debug.Log(mySize.localScale);
-           // Debug.Log(calmLevel);
+            }
         } else {
             calmLevel = 10;
         }
     }
 
     void Grow() {
+        angyLevel += 500f * Time.deltaTime;
+        //Debug.Log(angyLevel);
+
+        float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) * (1 + angyLevel/100);
+
+        mySize.localScale = new Vector3(
+            Mathf.Sign(mySize.localScale.x) * newScaleMagnitude, 
+            Mathf.Sign(mySize.localScale.y) * newScaleMagnitude, 
+            Mathf.Sign(mySize.localScale.z) * newScaleMagnitude
+        );
+
+         movementScript.currentScale = mySize.localScale;
+
+        if (mySize.localScale.y > 1) {
+            grown = true;
+        }
+
+        if (angyLevel > 60) {
+            angyLevel = 60;
+        }
 
     }
 
-    void ResetSize() {
+     void ResetSize() {
+
+        resetting = true;
+
         if (shrunk) {
             float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) + (shrinkRate * Time.deltaTime);
 
@@ -115,8 +159,10 @@ public class HeartMechanics : MonoBehaviour
                 calmLevel = 0;
                 shrunk = false;
                 activeDuration = 3;
+                resetting = false;
             }
         }
 
     }
+
 }
