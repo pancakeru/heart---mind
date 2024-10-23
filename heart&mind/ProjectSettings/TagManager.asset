@@ -7,6 +7,9 @@ TagManager:
   - Wall
   - Floor
   - Dialogue Box
+  - Calm Zone
+  - angy bar
+  - calm bar
   layers:
   - Default
   - TransparentFX

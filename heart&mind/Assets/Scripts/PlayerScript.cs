@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float jumpPower;
 
     //appearance vars
-    private Vector3 currentScale;
+    public Vector3 currentScale;
 
 
     void Start()
@@ -47,16 +47,27 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //Debug.Log(grounded);
+      /*  if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A)) {
+            currentScale.x *= -1;
+        } */
 
         //move right and left
         if (Input.GetKey(KeyCode.D)) {
             rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
-            currentScale.x = 1;
+            if (currentScale.x > 0) {
+                currentScale.x *= 1;
+            } else {
+                currentScale.x *= -1;
+            }
         }
 
         if (Input.GetKey(KeyCode.A)) {
             rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
-            currentScale.x = -1;
+            if (currentScale.x < 0) {
+                currentScale.x *= 1;
+            } else {
+                currentScale.x *= -1;
+            }
         }
 
         transform.localScale = currentScale;
