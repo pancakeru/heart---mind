@@ -4,28 +4,42 @@ using UnityEngine.UI;  // For UI elements
 
 public class DisplayTextOnTrigger : MonoBehaviour
 {
-    public Text uiText;  // Reference to the UI Text
-    public Font newFont;  // Font you want to apply
-    public Color textColor = Color.white;  // Color of the text
+    private Text uiText;  // Reference to the UI Text
+    public Font catFont;  // Font for cat
+    public Font wolfFont; // Font for wolf
+    public Color catColor = Color.white;  // Color of the text for cat
+    public Color wolfColor = Color.white;  // Color of the text for wolf
     public float letterDelay = 0.05f;  // Delay between each letter
     public float sectionDelay = 1f;  // Delay between text sections
 
     public string[] textSections;  // Array of text sections to display
-    private int currentSectionIndex = 0;
+    //private int currentSectionIndex = 0;
 
     private void Start()
     {
-        // Initialize UI Text settings
-        uiText.font = newFont;
-        uiText.color = textColor;
+
+        uiText = GameObject.FindWithTag("Dialogue Box").GetComponent<Text>(); //Assigns the GameObjext
         uiText.text = "";  // Ensure the UI text starts empty
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))  // Ensure the collider is the player
         {
+
+            if(other.name == "Cat Player") //assigns the cat variables
+            {
+                uiText.font = catFont;
+                uiText.color = catColor;
+            }
+            else  //assigns the wolf variables
+            {
+                uiText.font = wolfFont;
+                uiText.color = wolfColor;
+            }
             StartCoroutine(ShowTextSequence());
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 

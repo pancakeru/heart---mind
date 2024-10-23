@@ -662,13 +662,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff29f0f458cfb0418e228b0b574606d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiText: {fileID: 0}
-  newFont: {fileID: 0}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
+  uiText: {fileID: 1266830621}
+  catFont: {fileID: 12800000, guid: 4d85733482354f54e9a3e55ea8c16d18, type: 3}
+  wolfFont: {fileID: 12800000, guid: 103d250a9a97ecd4aba21aceb846b7c6, type: 3}
+  catColor: {r: 1, g: 1, b: 1, a: 1}
+  wolfColor: {r: 1, g: 1, b: 1, a: 1}
   letterDelay: 0.05
   sectionDelay: 3
   textSections:
   - UwU, I'm just a lil' guy
+  - I said I'm just a guy
+  - We're just men
+  - We're just Innocent men
 --- !u!61 &1182217143
 BoxCollider2D:
   m_ObjectHideFlags: 0
