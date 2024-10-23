@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -12,9 +14,7 @@ public class PlayerScript : MonoBehaviour
     //movement vars
     [SerializeField] float moveSpeed; //how fast player moves
     [SerializeField] float maxSpeed; //max horizontal speed
-
     
-
     //jumping vars
     private bool jump = false;
     [SerializeField] float jumpPower;
@@ -46,6 +46,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(grounded);
+
         //move right and left
         if (Input.GetKey(KeyCode.D)) {
             rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
@@ -65,16 +67,20 @@ public class PlayerScript : MonoBehaviour
         }
 
         //jumping mechanic
-        if(Input.GetKey(KeyCode.W) && !jump) {
+        //floor objects in editor need to have lthe layer "floor" assigned to them
+        Debug.DrawRay(gameObject.transform.position, Vector3.down, UnityEngine.Color.red , 0.2f, true);
+
+        if (Input.GetKey(KeyCode.W) && !jump) {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
             jump = true;
         }
 
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        //reset jump upon collision with wall obj
-        if (other.gameObject.CompareTag("Wall")) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
             jump = false;
         }
     }

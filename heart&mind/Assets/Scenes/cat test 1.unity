@@ -571,21 +571,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1951437134232817175, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
-      propertyPath: maxSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1951437134232817175, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
-      propertyPath: jumpPower
-      value: 40000
-      objectReference: {fileID: 0}
     - target: {fileID: 3916644246145880654, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_Name
       value: Cat Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -625,10 +613,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

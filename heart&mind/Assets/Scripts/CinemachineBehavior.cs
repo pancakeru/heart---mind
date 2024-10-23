@@ -32,7 +32,7 @@ public class CinemachineBehavior : MonoBehaviour
         if(player.name == "Wolf Player")
         {
             lockCam.m_YPosition = 20;    //set height of camera
-            virtualCamera.m_Lens.OrthographicSize = 25;    //setsize of camera;
+            virtualCamera.m_Lens.OrthographicSize = 22;    //setsize of camera;
         }
     }
 
