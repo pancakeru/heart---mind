@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class HeartMechanics : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HeartMechanics : MonoBehaviour
     public float calmLevel = 0;
 
     private float shrinkRate = 0.1f;
+    private float growthRate = 20f;
     private bool inZone = false;
 
     private bool shrunk = false;
@@ -25,6 +27,10 @@ public class HeartMechanics : MonoBehaviour
     private bool resetting = false;
     
     private PlayerScript movementScript;
+
+    //ref to UI bar
+    public Image angyBar;
+    public Image calmBar;
 
     void Start()
     {
@@ -34,6 +40,7 @@ public class HeartMechanics : MonoBehaviour
 
         //get ref to PlayerScript on obj
         movementScript = this.GetComponent<PlayerScript>();
+        
     }
 
 
@@ -50,7 +57,11 @@ public class HeartMechanics : MonoBehaviour
             }
         }
 
-       // Debug.Log(angyLevel);
+
+       Debug.Log(angyLevel);
+
+       angyBar.fillAmount = angyLevel / 1;
+       calmBar.fillAmount = calmLevel / 10;
 
 
     }
@@ -58,7 +69,7 @@ public class HeartMechanics : MonoBehaviour
     //trigger stay to check if in calm zone
     void OnTriggerStay2D(Collider2D other) {
         //if in zone and not moving, call shrink
-        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude == 0 && !resetting) {
+        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude == 0 && !resetting && !grown) {
             inZone = true;
             Shrink();
         }
@@ -78,7 +89,7 @@ public class HeartMechanics : MonoBehaviour
                 Vector2 normal = contact.normal;
 
                 //if the collision happens horizontally
-                if (Mathf.Abs(normal.x) > Mathf.Abs(normal.y) && angyLevel < 60f && !resetting)
+                if (Mathf.Abs(normal.x) > Mathf.Abs(normal.y) && angyLevel < 1 && !resetting && !shrunk)
                 {
                     Grow();
                     activeDuration = 3;
@@ -106,19 +117,17 @@ public class HeartMechanics : MonoBehaviour
  
             calmLevel += 2 * Time.deltaTime;
 
-           if (mySize.localScale.y < 1) {
-            shrunk = true;
-            }
+           shrunk = true;
         } else {
             calmLevel = 10;
         }
     }
 
     void Grow() {
-        angyLevel += 500f * Time.deltaTime;
+        angyLevel += 2.5f * Time.deltaTime;
         //Debug.Log(angyLevel);
 
-        float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) * (1 + angyLevel/100);
+        float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) + (growthRate * angyLevel * Time.deltaTime);
 
         mySize.localScale = new Vector3(
             Mathf.Sign(mySize.localScale.x) * newScaleMagnitude, 
@@ -128,12 +137,10 @@ public class HeartMechanics : MonoBehaviour
 
          movementScript.currentScale = mySize.localScale;
 
-        if (mySize.localScale.y > 1) {
-            grown = true;
-        }
+        grown = true;
 
-        if (angyLevel > 60) {
-            angyLevel = 60;
+        if (angyLevel > 1) {
+            angyLevel = 1;
         }
 
     }
@@ -158,6 +165,27 @@ public class HeartMechanics : MonoBehaviour
             if (calmLevel < 0) {
                 calmLevel = 0;
                 shrunk = false;
+                activeDuration = 3;
+                resetting = false;
+            }
+        }
+
+        if (grown) {
+            float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) - (growthRate/9.6f * angyLevel * Time.deltaTime);
+
+        mySize.localScale = new Vector3(
+            Mathf.Sign(mySize.localScale.x) * newScaleMagnitude, 
+            Mathf.Sign(mySize.localScale.y) * newScaleMagnitude, 
+            Mathf.Sign(mySize.localScale.z) * newScaleMagnitude
+        );
+
+         movementScript.currentScale = mySize.localScale;
+
+         angyLevel -= 0.25f * Time.deltaTime;
+
+             if (angyLevel < 0) {
+                angyLevel = 0;
+                grown = false;
                 activeDuration = 3;
                 resetting = false;
             }
