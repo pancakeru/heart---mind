@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\CinemachineBehavior.cs" />
+    <Compile Include="Assets\Scripts\DialogueController.cs" />
     <Compile Include="Assets\Scripts\Extensions\LockCameraY.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
   </ItemGroup>
