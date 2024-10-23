@@ -7,7 +7,6 @@ using Cinemachine;
 
 // found online, adjusted to make it fix the Y co-ordinate of the cam
 
-
 [ExecuteInEditMode]
 [SaveDuringPlay]
 [AddComponentMenu("")] // Hide in menu
