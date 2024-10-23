@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  maxSpeed: 14
+  maxSpeed: 10
   jumpPower: 40000
 --- !u!95 &9123098421476691334
 Animator:

@@ -25,14 +25,14 @@ public class CinemachineBehavior : MonoBehaviour
         //Assign Values to catCam
         if(player.name == "Cat Player")
         {
-            lockCam.m_YPosition = 10;    //set height of camera
-            virtualCamera.m_Lens.OrthographicSize = 15;    //setsize of camera;
+            lockCam.m_YPosition = 7;    //set height of camera
+            virtualCamera.m_Lens.OrthographicSize = 9;    //setsize of camera;
         }
         //Assign valyes to dogCam
         if(player.name == "Wolf Player")
         {
-            lockCam.m_YPosition = 20;    //set height of camera
-            virtualCamera.m_Lens.OrthographicSize = 22;    //setsize of camera;
+            lockCam.m_YPosition = 8;    //set height of camera
+            virtualCamera.m_Lens.OrthographicSize = 12;    //setsize of camera;
         }
     }
 
