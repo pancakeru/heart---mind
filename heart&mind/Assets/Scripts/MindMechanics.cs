@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class MindMechanics : MonoBehaviour
     [SerializeField] private GameObject grower; 
     [SerializeField] private float rateOfChange;
     [SerializeField] private float initialSize;
+    [SerializeField] private Transform camTarget;
+    private CinemachineVirtualCamera vCam; 
     private float localCount;
     private static float limit = 120f;
     private float realPosChange;
@@ -38,6 +41,9 @@ public class MindMechanics : MonoBehaviour
             grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);
             localCount++;
         }
+
+        vCam = GameObject.FindGameObjectWithTag("vCam").GetComponent<CinemachineVirtualCamera>();
+
     }
 
     // Update is called once per frame
@@ -57,6 +63,9 @@ public class MindMechanics : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+
+        vCam.Follow = camTarget;
+
         if(collision.tag == "Player" && Input.GetKey(KeyCode.P))
         {
             if(count < limit)
@@ -77,6 +86,11 @@ public class MindMechanics : MonoBehaviour
                 localCount--;
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        vCam.Follow = collision.gameObject.transform;
     }
 
 }

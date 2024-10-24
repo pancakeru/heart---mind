@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &774877853468977760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8445166837584794376}
+  m_Layer: 0
+  m_Name: CamTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8445166837584794376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774877853468977760}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.88, y: 2.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2196966022153294547}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2244552362993936040
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.61331, z: 0}
-  m_LocalScale: {x: 0.7440838, y: 0.1952899, z: 1}
+  m_LocalScale: {x: 1.9654784, y: 0.1952899, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969095538228603510}
@@ -161,6 +192,7 @@ Transform:
   m_Children:
   - {fileID: 969095538228603510}
   - {fileID: 5505519102740573563}
+  - {fileID: 8445166837584794376}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3590775638398870213
@@ -223,8 +255,8 @@ Transform:
   m_GameObject: {fileID: 4199793013209138787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.01, y: 3.8853, z: 0}
-  m_LocalScale: {x: 10.581233, y: 6.3392205, z: 1}
+  m_LocalPosition: {x: -12.2997, y: 3.8853, z: 0}
+  m_LocalScale: {x: 3.5109496, y: 6.3392205, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8789901874806644488}
@@ -342,6 +374,7 @@ MonoBehaviour:
   grower: {fileID: 4666625764673380287}
   rateOfChange: 1
   initialSize: 0
+  camTarget: {fileID: 8445166837584794376}
   buildBar: {fileID: 0}
   dissolveBar: {fileID: 0}
 --- !u!1 &4666625764673380287
