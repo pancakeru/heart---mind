@@ -106,6 +106,10 @@ MonoBehaviour:
   maxSpeed: 10
   jumpPower: 40000
   currentScale: {x: 0, y: 0, z: 0}
+  walkAnim: {fileID: 7400000, guid: 5edea3f940c51f34887509e1c81a4042, type: 2}
+  idleAnim: {fileID: 7400000, guid: 554cf95413a812642b58cf26b9dd8ad6, type: 2}
+  jumpUp: {fileID: 0}
+  jumpDown: {fileID: 0}
 --- !u!95 &9123098421476691334
 Animator:
   serializedVersion: 5
@@ -116,7 +120,7 @@ Animator:
   m_GameObject: {fileID: 3916644246145880654}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ded0191e8da37f499cd92db1c956419, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
