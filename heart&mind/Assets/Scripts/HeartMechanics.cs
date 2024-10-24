@@ -58,7 +58,7 @@ public class HeartMechanics : MonoBehaviour
         }
 
 
-       Debug.Log(angyLevel);
+     //  Debug.Log(angyLevel);
 
        angyBar.fillAmount = angyLevel / 1;
        calmBar.fillAmount = calmLevel / 10;
