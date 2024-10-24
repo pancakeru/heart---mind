@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MindMechanics : MonoBehaviour
 {
 
-    [SerializeField] private GameObject grower;
+    [SerializeField] private GameObject grower; 
     [SerializeField] private float rateOfChange;
     [SerializeField] private float initialSize;
     private float localCount;
@@ -14,9 +15,17 @@ public class MindMechanics : MonoBehaviour
     private float realScaleChange;
     private static float count;
 
+    //ref to UI bar
+    public Image buildBar;
+    public Image dissolveBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        buildBar = GameObject.FindGameObjectWithTag("angy bar").GetComponent<Image>();
+        dissolveBar = GameObject.FindGameObjectWithTag("calm bar").GetComponent<Image>();
+
+
         realPosChange = rateOfChange * 0.0645f;
         realScaleChange = rateOfChange * 0.129f;
 
@@ -34,7 +43,16 @@ public class MindMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(count >= 0)
+        {
+            buildBar.fillAmount = count / 120;
+            dissolveBar.fillAmount = 0;
+        }
+        else
+        {
+            buildBar.fillAmount = 0;
+            dissolveBar.fillAmount = -count / 120;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
