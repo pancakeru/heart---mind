@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     
     //jumping vars
     private bool jump = false;
-    [SerializeField] float jumpPower;
+    [SerializeField]  float jumpPower;
 
     //appearance vars
     public Vector3 currentScale;
@@ -46,14 +46,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(grounded);
-      /*  if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A)) {
-            currentScale.x *= -1;
-        } */
-
         //move right and left
         if (Input.GetKey(KeyCode.D)) {
-            rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
+          rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
             if (currentScale.x > 0) {
                 currentScale.x *= 1;
             } else {
@@ -62,7 +57,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.A)) {
-            rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
+           rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
             if (currentScale.x < 0) {
                 currentScale.x *= 1;
             } else {
@@ -79,7 +74,9 @@ public class PlayerScript : MonoBehaviour
 
         //jumping mechanic
         //floor objects in editor need to have lthe layer "floor" assigned to them
-        Debug.DrawRay(gameObject.transform.position, Vector3.down, UnityEngine.Color.red , 0.2f, true);
+       // Debug.DrawRay(gameObject.transform.position, Vector3.down, UnityEngine.Color.red , 0.2f, true);
+
+     //  Debug.Log(rb.velocity.x);
 
         if (Input.GetKey(KeyCode.W) && !jump) {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
@@ -95,4 +92,5 @@ public class PlayerScript : MonoBehaviour
             jump = false;
         }
     }
+
 }

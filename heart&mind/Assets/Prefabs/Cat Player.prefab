@@ -143,7 +143,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dd431a093c6041f45a3bafb8243c3286, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -213,6 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angyLevel: 0
   calmLevel: 0
+  angyBar: {fileID: 0}
+  calmBar: {fileID: 0}
 --- !u!1 &8761363898409172580
 GameObject:
   m_ObjectHideFlags: 0
