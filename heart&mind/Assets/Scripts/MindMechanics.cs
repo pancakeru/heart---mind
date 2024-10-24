@@ -12,11 +12,11 @@ public class MindMechanics : MonoBehaviour
     [SerializeField] private float initialSize;
     [SerializeField] private Transform camTarget;
     private CinemachineVirtualCamera vCam; 
-    private float localCount;
+    private float localCount; //local count keeps track of growth of specific wall, to make sure it doesn't go into the negative
     private static float limit = 120f;
     private float realPosChange;
     private float realScaleChange;
-    private static float count;
+    private static float count; //keeps track of growth of all walls
 
     //ref to UI bar
     public Image buildBar;
@@ -25,16 +25,19 @@ public class MindMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //grab sprites for skill bar
         buildBar = GameObject.FindGameObjectWithTag("angy bar").GetComponent<Image>();
         dissolveBar = GameObject.FindGameObjectWithTag("calm bar").GetComponent<Image>();
 
-
+        //set the rate of growth based on changeable variables
         realPosChange = rateOfChange * 0.0645f;
         realScaleChange = rateOfChange * 0.129f;
 
+        //set count and local count to 0
         count = 0f;
         localCount = 0f;
 
+        //set initial height of wall
         for (int i = 0; i < initialSize; i++)
         {
             grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
@@ -42,6 +45,7 @@ public class MindMechanics : MonoBehaviour
             localCount++;
         }
 
+        //grab virtual camera reference
         vCam = GameObject.FindGameObjectWithTag("vCam").GetComponent<CinemachineVirtualCamera>();
 
     }
@@ -49,6 +53,7 @@ public class MindMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set visual of skill bar
         if(count >= 0)
         {
             buildBar.fillAmount = count / 120;
@@ -63,9 +68,10 @@ public class MindMechanics : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
+        //make the camera target wall's camPosition
         vCam.Follow = camTarget;
 
+        //make wall grow
         if(collision.tag == "Player" && Input.GetKey(KeyCode.P))
         {
             if(count < limit)
@@ -75,7 +81,7 @@ public class MindMechanics : MonoBehaviour
                 count++;
                 localCount++;
             }
-        }
+        } //make wal go down
         if (collision.tag == "Player" && Input.GetKey(KeyCode.L))
         {
             if(count > -limit && localCount > 0)
@@ -90,6 +96,7 @@ public class MindMechanics : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //return the camera to the player
         vCam.Follow = collision.gameObject.transform;
     }
 
