@@ -7,14 +7,18 @@ public class MindMechanics : MonoBehaviour
 
     [SerializeField] private GameObject grower;
     [SerializeField] private float rateOfChange;
+    private static float limit = 120f;
     private float realPosChange;
     private float realScaleChange;
+    private static float count;
 
     // Start is called before the first frame update
     void Start()
     {
         realPosChange = rateOfChange * 0.0645f;
         realScaleChange = rateOfChange * 0.129f;
+
+        count = 0f;
     }
 
     // Update is called once per frame
@@ -27,8 +31,35 @@ public class MindMechanics : MonoBehaviour
     {
         if(collision.tag == "Player" && Input.GetKey(KeyCode.O))
         {
-            grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
-            grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);
+            if(count < limit)
+            {
+                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
+                if (count >= 0)
+                {
+                    grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);
+                }
+                else
+                {
+                    grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y - realScaleChange, grower.transform.localScale.z);
+                }
+                count++;
+            }
+        }
+        if (collision.tag == "Player" && Input.GetKey(KeyCode.L))
+        {
+            if(count > -limit)
+            {
+                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y - realPosChange);
+                if (count <= 0)
+                {
+                    grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);
+                }
+                else
+                {
+                    grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y - realScaleChange, grower.transform.localScale.z);
+                }
+                count--;
+            }
         }
     }
 
