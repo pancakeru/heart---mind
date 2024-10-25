@@ -28,6 +28,8 @@ public class PlayerScript : MonoBehaviour
     public Sprite jumpUp;
     public Sprite jumpDown;
 
+    //stuff for character switching
+    public bool active;
 
     void Start()
     {
@@ -52,38 +54,51 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //move right and left
-        if (Input.GetKey(KeyCode.D)) {
-          rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
-            if (currentScale.x > 0) {
-                currentScale.x *= 1;
-            } else {
-                currentScale.x *= -1;
+        if (active) //checking if active. For the final level
+        {
+            //move right and left
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
+                if (currentScale.x > 0)
+                {
+                    currentScale.x *= 1;
+                }
+                else
+                {
+                    currentScale.x *= -1;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
+                if (currentScale.x < 0)
+                {
+                    currentScale.x *= 1;
+                }
+                else
+                {
+                    currentScale.x *= -1;
+                }
+            }
+
+            transform.localScale = currentScale;
+
+            //jumping mechanic
+            //floor objects in editor need to have lthe layer "floor" assigned to them
+            if (Input.GetKey(KeyCode.W) && !jump || Input.GetKey(KeyCode.Space) && !jump)
+            {
+                rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
+                jump = true;
+                myAnim.enabled = false;
             }
         }
-
-        if (Input.GetKey(KeyCode.A)) {
-           rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
-            if (currentScale.x < 0) {
-                currentScale.x *= 1;
-            } else {
-                currentScale.x *= -1;
-            }
-        }
-
-        transform.localScale = currentScale;
 
         //clamping horizontal speed
-        if (Mathf.Abs(rb.velocity.x) > maxSpeed) {
-             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
-        }
-
-        //jumping mechanic
-        //floor objects in editor need to have lthe layer "floor" assigned to them
-        if (Input.GetKey(KeyCode.W) && !jump || Input.GetKey(KeyCode.Space) && !jump) {
-            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
-            jump = true;
-            myAnim.enabled = false;
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+        {
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
         }
 
         AnimationControl();
