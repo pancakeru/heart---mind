@@ -89,8 +89,6 @@ public class PlayerScript : MonoBehaviour
         AnimationControl();
         JumpAnimControl();
 
-        Debug.Log(rb.velocity.y);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -122,10 +120,10 @@ public class PlayerScript : MonoBehaviour
 
     void JumpAnimControl() {
         if (rb.velocity.y >= 0) {
-            mySprite.sprite = jumpUp;
-        } else {
-            mySprite.sprite = jumpDown;
-        }
+             mySprite.sprite = jumpUp;
+         } else {
+             mySprite.sprite = jumpDown;
+          }
 
     }
 
