@@ -22,6 +22,12 @@ public class PlayerScript : MonoBehaviour
     //appearance vars
     public Vector3 currentScale;
 
+    //animation sprite refs
+    public AnimationClip walkAnim;
+    public AnimationClip idleAnim;
+    public Sprite jumpUp;
+    public Sprite jumpDown;
+
 
     void Start()
     {
@@ -74,14 +80,14 @@ public class PlayerScript : MonoBehaviour
 
         //jumping mechanic
         //floor objects in editor need to have lthe layer "floor" assigned to them
-       // Debug.DrawRay(gameObject.transform.position, Vector3.down, UnityEngine.Color.red , 0.2f, true);
-
-     //  Debug.Log(rb.velocity.x);
-
-        if (Input.GetKey(KeyCode.W) && !jump) {
+        if (Input.GetKey(KeyCode.W) && !jump || Input.GetKey(KeyCode.Space) && !jump) {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
             jump = true;
+            myAnim.enabled = false;
         }
+
+        AnimationControl();
+        JumpAnimControl();
 
     }
 
@@ -90,7 +96,35 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             jump = false;
+            myAnim.SetBool("jumping", false);
+            myAnim.enabled = true;
         }
+    }
+
+    void AnimationControl() {
+
+        if (!jump) {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+               myAnim.SetBool("walking", true);
+            }
+
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+                myAnim.SetBool("walking", false);
+            }
+        } else {
+            myAnim.SetBool("walking", false);
+            myAnim.SetBool("jumping", true);
+        }
+
+    }
+
+    void JumpAnimControl() {
+        if (rb.velocity.y >= 0) {
+             mySprite.sprite = jumpUp;
+         } else {
+             mySprite.sprite = jumpDown;
+          }
+
     }
 
 }
