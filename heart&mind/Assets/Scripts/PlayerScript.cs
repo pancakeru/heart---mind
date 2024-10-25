@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour
 
         //jumping mechanic
         //floor objects in editor need to have lthe layer "floor" assigned to them
-        if (Input.GetKey(KeyCode.W) && !jump) {
+        if (Input.GetKey(KeyCode.W) && !jump || Input.GetKey(KeyCode.Space) && !jump) {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
             jump = true;
             myAnim.enabled = false;
