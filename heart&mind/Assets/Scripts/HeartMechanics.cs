@@ -13,7 +13,7 @@ public class HeartMechanics : MonoBehaviour
     private Transform mySize;
     private Rigidbody2D rb;
 
-    private float activeDuration = 3;
+    private float activeDuration = 5;
 
     public float angyLevel = 0;
     public float calmLevel = 0;
@@ -83,8 +83,7 @@ public class HeartMechanics : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Wall")) {
-            foreach (ContactPoint2D contact in other.contacts)
+         foreach (ContactPoint2D contact in other.contacts)
             {
                 Vector2 normal = contact.normal;
 
@@ -95,7 +94,6 @@ public class HeartMechanics : MonoBehaviour
                     activeDuration = 3;
                 }
             }
-        }
     }
 
 
@@ -125,7 +123,7 @@ public class HeartMechanics : MonoBehaviour
 
     void Grow() {
         angyLevel += 2.5f * Time.deltaTime;
-        //Debug.Log(angyLevel);
+        
 
         float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) + (growthRate * angyLevel * Time.deltaTime);
 
@@ -165,7 +163,7 @@ public class HeartMechanics : MonoBehaviour
             if (calmLevel < 0) {
                 calmLevel = 0;
                 shrunk = false;
-                activeDuration = 3;
+                activeDuration = 5;
                 resetting = false;
             }
         }
@@ -186,7 +184,7 @@ public class HeartMechanics : MonoBehaviour
              if (angyLevel < 0) {
                 angyLevel = 0;
                 grown = false;
-                activeDuration = 3;
+                activeDuration = 5;
                 resetting = false;
             }
         }
