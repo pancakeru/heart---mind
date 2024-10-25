@@ -83,9 +83,13 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && !jump) {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
             jump = true;
+            myAnim.enabled = false;
         }
 
         AnimationControl();
+        JumpAnimControl();
+
+        Debug.Log(rb.velocity.y);
 
     }
 
@@ -95,6 +99,7 @@ public class PlayerScript : MonoBehaviour
         {
             jump = false;
             myAnim.SetBool("jumping", false);
+            myAnim.enabled = true;
         }
     }
 
@@ -111,6 +116,15 @@ public class PlayerScript : MonoBehaviour
         } else {
             myAnim.SetBool("walking", false);
             myAnim.SetBool("jumping", true);
+        }
+
+    }
+
+    void JumpAnimControl() {
+        if (rb.velocity.y >= 0) {
+            mySprite.sprite = jumpUp;
+        } else {
+            mySprite.sprite = jumpDown;
         }
 
     }
