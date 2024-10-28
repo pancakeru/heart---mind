@@ -103,13 +103,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  maxSpeed: 10
+  maxSpeed: 8.5
   jumpPower: 40000
   currentScale: {x: 0, y: 0, z: 0}
   walkAnim: {fileID: 7400000, guid: 5edea3f940c51f34887509e1c81a4042, type: 2}
   idleAnim: {fileID: 7400000, guid: 554cf95413a812642b58cf26b9dd8ad6, type: 2}
   jumpUp: {fileID: 21300000, guid: 10744eb0f3ed7a546bb2cbbc31ebcc09, type: 3}
   jumpDown: {fileID: 21300000, guid: 315d5d1379c1ba240bf7acdf731ea9bb, type: 3}
+  active: 0
 --- !u!95 &9123098421476691334
 Animator:
   serializedVersion: 5
