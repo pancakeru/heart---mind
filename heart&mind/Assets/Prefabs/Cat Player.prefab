@@ -220,6 +220,10 @@ MonoBehaviour:
   calmLevel: 0
   angyBar: {fileID: 0}
   calmBar: {fileID: 0}
+  angyUp: {fileID: 1966990209, guid: c9eadcc7836ba8440abc8d1531198a9b, type: 3}
+  angyDown: {fileID: 1146716589, guid: c9eadcc7836ba8440abc8d1531198a9b, type: 3}
+  normalUp: {fileID: 21300000, guid: 10744eb0f3ed7a546bb2cbbc31ebcc09, type: 3}
+  normalDown: {fileID: 21300000, guid: 315d5d1379c1ba240bf7acdf731ea9bb, type: 3}
 --- !u!1 &8761363898409172580
 GameObject:
   m_ObjectHideFlags: 0
