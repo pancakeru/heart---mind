@@ -27,6 +27,7 @@ public class HeartMechanics : MonoBehaviour
     private bool resetting = false;
     
     private PlayerScript movementScript;
+    private Animator myAnim;
 
     //ref to UI bar
     public Image angyBar;
@@ -40,6 +41,7 @@ public class HeartMechanics : MonoBehaviour
 
         //get ref to PlayerScript on obj
         movementScript = this.GetComponent<PlayerScript>();
+        myAnim = this.GetComponent<Animator>();
         
     }
 
@@ -80,6 +82,10 @@ public class HeartMechanics : MonoBehaviour
         if (other.gameObject.CompareTag("Calm Zone")) {
             inZone = false;
         }
+
+        if (angyLevel < 0.5f) {
+            myAnim.SetBool("angy", false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -92,6 +98,7 @@ public class HeartMechanics : MonoBehaviour
                 {
                     Grow();
                     activeDuration = 3;
+                    myAnim.SetBool("angy", true);
                 }
             }
     }
@@ -139,6 +146,7 @@ public class HeartMechanics : MonoBehaviour
 
         if (angyLevel > 1) {
             angyLevel = 1;
+            myAnim.SetBool("angy", true);
         }
 
     }
@@ -181,11 +189,16 @@ public class HeartMechanics : MonoBehaviour
 
          angyLevel -= 0.25f * Time.deltaTime;
 
+         if (angyLevel < 0.2f) {
+             myAnim.SetBool("angy", false);
+         }
+
              if (angyLevel < 0) {
                 angyLevel = 0;
                 grown = false;
                 activeDuration = 5;
                 resetting = false;
+                myAnim.SetBool("angy", false);
             }
         }
 
