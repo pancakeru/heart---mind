@@ -33,6 +33,12 @@ public class HeartMechanics : MonoBehaviour
     public Image angyBar;
     public Image calmBar;
 
+    public Sprite angyUp;
+    public Sprite angyDown;
+    public Sprite normalUp;
+    public Sprite normalDown;
+
+
     void Start()
     {
         //get rb and transform components
@@ -147,6 +153,8 @@ public class HeartMechanics : MonoBehaviour
         if (angyLevel > 1) {
             angyLevel = 1;
             myAnim.SetBool("angy", true);
+            movementScript.jumpUp = angyUp;
+            movementScript.jumpDown = angyDown;
         }
 
     }
@@ -191,6 +199,8 @@ public class HeartMechanics : MonoBehaviour
 
          if (angyLevel < 0.2f) {
              myAnim.SetBool("angy", false);
+             movementScript.jumpUp = normalUp;
+             movementScript.jumpDown = normalDown;
          }
 
              if (angyLevel < 0) {
