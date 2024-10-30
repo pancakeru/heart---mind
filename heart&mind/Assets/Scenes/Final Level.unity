@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 8961443}
   - component: {fileID: 8961442}
   - component: {fileID: 8961441}
-  - component: {fileID: 8961444}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -191,19 +190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8961444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8961440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 781740803bae4f14b98a992d8210113d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players: []
 --- !u!1001 &145918521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,10 +238,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5197738064347801453, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
-      propertyPath: playing
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7771055718018671489, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_Name
       value: Wolf Player
@@ -265,6 +247,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
+--- !u!1001 &356790229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3045744797676528128, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Box Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[1]
+      value: We're just men
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[2]
+      value: I said I'm just a guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[4]
+      value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[0]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[1]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[2]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[3]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
 --- !u!1001 &398500379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,6 +473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1123896173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6808048736259370012, guid: 360e9ae020ebf38458a7129be74464e5, type: 3}
+  m_PrefabInstance: {fileID: 6577047823628750708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1129824228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 869358743736178047, guid: 360e9ae020ebf38458a7129be74464e5, type: 3}
@@ -488,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 1129824228}
     - target: {fileID: 1951437134232817175, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: playing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3916644246145880654, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_Name
@@ -644,6 +724,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 344420985754626069, guid: 619f22440c340e248afba1e3addd1fcf, type: 3}
+      propertyPath: catBar
+      value: 
+      objectReference: {fileID: 1123896173}
+    - target: {fileID: 344420985754626069, guid: 619f22440c340e248afba1e3addd1fcf, type: 3}
+      propertyPath: wolfBar
+      value: 
+      objectReference: {fileID: 1978208870}
     - target: {fileID: 1728761792858448901, guid: 619f22440c340e248afba1e3addd1fcf, type: 3}
       propertyPath: m_Name
       value: Camera Prefab
@@ -657,6 +745,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 619f22440c340e248afba1e3addd1fcf, type: 3}
+--- !u!1 &1978208870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2335874677178801731, guid: 360e9ae020ebf38458a7129be74464e5, type: 3}
+  m_PrefabInstance: {fileID: 6577047823628750708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2083501342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -833,3 +926,4 @@ SceneRoots:
   - {fileID: 6577047823628750708}
   - {fileID: 8961443}
   - {fileID: 1671187762}
+  - {fileID: 356790229}
