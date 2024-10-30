@@ -16,6 +16,7 @@ public class CinemachineBehavior : MonoBehaviour
     private GameObject target;
     public GameObject wolfBar;
     public GameObject catBar;
+    private bool multipleCharacters = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,24 +54,32 @@ public class CinemachineBehavior : MonoBehaviour
             catBar.SetActive(false);
             wolfBar.SetActive(true);
         }
+
+        if(players.Count > 1)
+        {
+            multipleCharacters = true;
+        }
     }
 
     public void CameraSet()
     {
 
-        for (int i = 0; i < players.Count; i++)
+        if (multipleCharacters)
         {
-            if (players[i].GetComponent<PlayerScript>().playing)
+            for (int i = 0; i < players.Count; i++)
             {
-                players[i].GetComponent<PlayerScript>().playing = false;
-                Debug.Log("Plaeyer " + players[i].name + "is active and being turned off");
-            }
-            else
-            {
-                Invoke("turningOn", 0.1f);
-                target = players[i];
-                playerPlaying = players[i];
-                Debug.Log("Plaeyer " + players[i].name + "is not active and being turned on");
+                if (players[i].GetComponent<PlayerScript>().playing)
+                {
+                    players[i].GetComponent<PlayerScript>().playing = false;
+                    Debug.Log("Plaeyer " + players[i].name + "is active and being turned off");
+                }
+                else
+                {
+                    Invoke("turningOn", 0.1f);
+                    target = players[i];
+                    playerPlaying = players[i];
+                    Debug.Log("Plaeyer " + players[i].name + "is not active and being turned on");
+                }
             }
         }
     }
