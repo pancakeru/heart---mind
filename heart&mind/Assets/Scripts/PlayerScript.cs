@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
+
 
 public class PlayerScript : MonoBehaviour
 {
@@ -29,7 +31,9 @@ public class PlayerScript : MonoBehaviour
     public Sprite jumpDown;
 
     //stuff for character switching
-    public bool active;
+    public bool playing;
+    private GameObject cam;
+    private bool pressingTab;
 
     void Start()
     {
@@ -49,13 +53,25 @@ public class PlayerScript : MonoBehaviour
 
         //store the current scale
         currentScale = this.transform.localScale;
+
+        cam = GameObject.FindGameObjectWithTag("vCam");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (active) //checking if active. For the final level
+
+
+
+        if (playing) //checking if active. For the final level
         {
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                Debug.Log("Trying to switch + " + gameObject + " + " + playing);
+                cam.GetComponent<CinemachineBehavior>().CameraSet();
+            }
+
             //move right and left
             if (Input.GetKey(KeyCode.D))
             {
@@ -118,7 +134,8 @@ public class PlayerScript : MonoBehaviour
 
     void AnimationControl() {
 
-        if (!jump) {
+        if (!jump && playing) 
+        {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
                myAnim.SetBool("walking", true);
             }
@@ -126,7 +143,9 @@ public class PlayerScript : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
                 myAnim.SetBool("walking", false);
             }
-        } else {
+        } 
+        else 
+        {
             myAnim.SetBool("walking", false);
             myAnim.SetBool("jumping", true);
         }

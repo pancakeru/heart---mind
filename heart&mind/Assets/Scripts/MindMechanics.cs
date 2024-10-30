@@ -77,10 +77,13 @@ public class MindMechanics : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //make the camera target wall's camPosition
-        vCam.Follow = camTarget;
+        if(collision.name == "Wolf Player")
+        {
+            vCam.Follow = camTarget;
+        }
 
         //make wall grow
-        if(collision.tag == "Player" && Input.GetKey(KeyCode.P))
+        if(collision.name == "Wolf Player" && Input.GetKey(KeyCode.P))
         {
             if(count < limit)
             {
@@ -90,7 +93,7 @@ public class MindMechanics : MonoBehaviour
                 localCount++;
             }
         } //make wal go down
-        if (collision.tag == "Player" && Input.GetKey(KeyCode.L))
+        if (collision.name == "Wolf Player" && Input.GetKey(KeyCode.L))
         {
             if(count > -limit && localCount > 0)
             {

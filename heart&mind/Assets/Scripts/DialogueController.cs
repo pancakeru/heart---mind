@@ -13,6 +13,7 @@ public class DisplayTextOnTrigger : MonoBehaviour
     public float sectionDelay = 1f;  // Delay between text sections
 
     public string[] textSections;  // Array of text sections to display
+    public string[] characterSpeaker; //Who is saying a certain text section
     //private int currentSectionIndex = 0;
 
     private void Start()
@@ -27,17 +28,6 @@ public class DisplayTextOnTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))  // Ensure the collider is the player
         {
-
-            if(other.name == "Cat Player") //assigns the cat variables
-            {
-                uiText.font = catFont;
-                uiText.color = catColor;
-            }
-            else  //assigns the wolf variables
-            {
-                uiText.font = wolfFont;
-                uiText.color = wolfColor;
-            }
             StartCoroutine(ShowTextSequence());
             gameObject.GetComponent<Collider2D>().enabled = false;
         }
@@ -48,6 +38,21 @@ public class DisplayTextOnTrigger : MonoBehaviour
         // Loop through all text sections
         for (int i = 0; i < textSections.Length; i++)
         {
+
+            Debug.Log("Section is " + i + " and character is " + characterSpeaker[i]);
+            if (characterSpeaker[i] == "Cat") //assigns the cat variables
+            {
+                uiText.font = catFont;
+                uiText.color = catColor;
+                Debug.Log("Dialogue " + i + " is Cat");
+            }
+            else  //assigns the wolf variables
+            {
+                uiText.font = wolfFont;
+                uiText.color = wolfColor;
+                Debug.Log("Dialogue " + i + " is Wolf");
+            }
+
             yield return StartCoroutine(TypeText(textSections[i]));  // Type out the section
             yield return new WaitForSeconds(sectionDelay);  // Wait before the next section
         }
