@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b539f7502fcc7f40aeb15ef2da197f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  maxSpeed: 7
+  moveSpeed: 16
+  maxSpeed: 10
   jumpPower: 800
   currentScale: {x: 0, y: 0, z: 0}
   walkAnim: {fileID: 7400000, guid: 3be37bedb4d9e874fbff93b92edf09c1, type: 2}
@@ -319,7 +319,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: dd431a093c6041f45a3bafb8243c3286, type: 2}
