@@ -22,6 +22,9 @@ public class MindMechanics : MonoBehaviour
     public Image buildBar;
     public Image dissolveBar;
 
+    //inverse movement
+    public bool inverse;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,13 @@ public class MindMechanics : MonoBehaviour
         dissolveBar = GameObject.FindGameObjectWithTag("calm bar").GetComponent<Image>();
 
         //set the rate of growth based on changeable variables
-        realPosChange = rateOfChange * 0.0645f;
-        realScaleChange = rateOfChange * 0.129f;
+        if (!inverse) {
+            realPosChange = rateOfChange * 0.0645f;
+            realScaleChange = rateOfChange * 0.129f;
+        } else {
+            realPosChange = rateOfChange * -0.0645f;
+            realScaleChange = rateOfChange * -0.129f;
+        }
 
         //set count and local count to 0
         count = 0f;
