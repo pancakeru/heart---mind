@@ -26,6 +26,8 @@ public class PushableScript : MonoBehaviour
     private float camSpeed = 2;
     private float camTimer = 3;
 
+    [SerializeField] float pushThreshold;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -51,7 +53,7 @@ public class PushableScript : MonoBehaviour
     {
         camTarget.position = Vector3.Lerp(camTarget.position, (catPlayer.transform.position + this.transform.position)/2, Time.deltaTime * camSpeed);
 
-        if (catControl.angyLevel < 0.9f ) {
+        if (catControl.angyLevel < pushThreshold ) {
             canPush = false;
             targetSize = 9;     
         } else {
