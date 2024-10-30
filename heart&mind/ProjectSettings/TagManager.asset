@@ -12,6 +12,7 @@ TagManager:
   - calm bar
   - vCam
   - pushable
+  - scene manager
   layers:
   - Default
   - TransparentFX

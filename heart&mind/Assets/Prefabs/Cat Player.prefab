@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b539f7502fcc7f40aeb15ef2da197f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 300
+  moveSpeed: 10
   maxSpeed: 8.5
-  jumpPower: 40000
+  jumpPower: 800
   currentScale: {x: 0, y: 0, z: 0}
   walkAnim: {fileID: 7400000, guid: 5edea3f940c51f34887509e1c81a4042, type: 2}
   idleAnim: {fileID: 7400000, guid: 554cf95413a812642b58cf26b9dd8ad6, type: 2}
