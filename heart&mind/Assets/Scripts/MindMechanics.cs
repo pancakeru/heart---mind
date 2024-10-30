@@ -77,7 +77,7 @@ public class MindMechanics : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //make the camera target wall's camPosition
-        if(collision.name == "Wolf Player")
+        if(collision.name == "Wolf Player" && collision.GetComponent<PlayerScript>().playing)
         {
             vCam.Follow = camTarget;
         }
