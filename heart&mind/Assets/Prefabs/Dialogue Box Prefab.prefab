@@ -151,6 +151,13 @@ MonoBehaviour:
   sectionDelay: 3
   textSections:
   - UwU, I'm just a lil' guy
-  - I said I'm just a guy
   - We're just men
+  - I said I'm just a guy
   - We're just Innocent men
+  - ' '
+  characterSpeaker:
+  - Cat
+  - Wolf
+  - Cat
+  - Wolf
+  - 
