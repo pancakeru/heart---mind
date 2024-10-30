@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Numerics;
 using Cinemachine;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class CinemachineBehavior : MonoBehaviour
     public List<GameObject> players = new List<GameObject>(); //List to switch characters
     public GameObject playerPlaying;
     private GameObject target;
+    public GameObject wolfBar;
+    public GameObject catBar;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +42,16 @@ public class CinemachineBehavior : MonoBehaviour
         {
             lockCam.m_YPosition = 7;    //set height of camera
             virtualCamera.m_Lens.OrthographicSize = 9;    //setsize of camera;
+            catBar.SetActive(true);
+            wolfBar.SetActive(false);
         }
         //Assign valyes to dogCam
         if(playerPlaying.name == "Wolf Player")
         {
             lockCam.m_YPosition = 8;    //set height of camera
             virtualCamera.m_Lens.OrthographicSize = 12;    //setsize of camera;
+            catBar.SetActive(false);
+            wolfBar.SetActive(true);
         }
     }
 
@@ -79,12 +86,16 @@ public class CinemachineBehavior : MonoBehaviour
         {
             lockCam.m_YPosition = 7;    //set height of camera
             virtualCamera.m_Lens.OrthographicSize = 9;    //setsize of camera;
+            catBar.SetActive(true);
+            wolfBar.SetActive(false);
         }
         //Assign valyes to dogCam
         if (playerPlaying.name == "Wolf Player")
         {
             lockCam.m_YPosition = 8;    //set height of camera
             virtualCamera.m_Lens.OrthographicSize = 12;    //setsize of camera;
+            catBar.SetActive(false);
+            wolfBar.SetActive(true);
         }
     }
 }
