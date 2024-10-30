@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
 using Cinemachine;
-
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,12 +11,12 @@ public class PlayerScript : MonoBehaviour
     private Animator myAnim;
 
     //movement vars
-    [SerializeField] float moveSpeed; //how fast player moves
-    [SerializeField] float maxSpeed; //max horizontal speed
-    
+    [SerializeField] float moveSpeed;
+    [SerializeField] float maxSpeed;
+
     //jumping vars
     private bool jump = false;
-    [SerializeField]  float jumpPower;
+    [SerializeField] float jumpPower;
 
     //appearance vars
     public Vector3 currentScale;
@@ -30,99 +27,86 @@ public class PlayerScript : MonoBehaviour
     public Sprite jumpUp;
     public Sprite jumpDown;
 
-    //stuff for character switching
+    //character switching
     public bool playing;
     private GameObject cam;
-    private bool pressingTab;
 
     void Start()
     {
-        //getting this objs components
-        rb = this.GetComponent<Rigidbody2D>();
-        mySprite = this.GetComponent<SpriteRenderer>();
-        myAnim = this.GetComponent<Animator>();
+        //Component references
+        rb = GetComponent<Rigidbody2D>();
+        mySprite = GetComponent<SpriteRenderer>();
+        myAnim = GetComponent<Animator>();
 
-        //lock the z orientation (so bro doesnt go upside down)
+        //lock z orientation
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        //initializing movement vars
-        moveSpeed *= Time.deltaTime;
-
-        //initializing jump vars
-        jumpPower *= Time.deltaTime;
-
-        //store the current scale
-        currentScale = this.transform.localScale;
-
+        //store current scale
+        currentScale = transform.localScale;
         cam = GameObject.FindGameObjectWithTag("vCam");
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
-
-
-        if (playing) //checking if active. For the final level
+        if (playing) 
         {
-
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                Debug.Log("Trying to switch + " + gameObject + " + " + playing);
-                cam.GetComponent<CinemachineBehavior>().CameraSet();
-            }
-
-            //move right and left
-            if (Input.GetKey(KeyCode.D))
-            {
-                rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
-                if (currentScale.x > 0)
-                {
-                    currentScale.x *= 1;
-                }
-                else
-                {
-                    currentScale.x *= -1;
-                }
-            }
-
-            if (Input.GetKey(KeyCode.A))
-            {
-                rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
-                if (currentScale.x < 0)
-                {
-                    currentScale.x *= 1;
-                }
-                else
-                {
-                    currentScale.x *= -1;
-                }
-            }
-
-            transform.localScale = currentScale;
-
-            //jumping mechanic
-            //floor objects in editor need to have lthe layer "floor" assigned to them
-            if (Input.GetKey(KeyCode.W) && !jump || Input.GetKey(KeyCode.Space) && !jump)
-            {
-                rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Force);
-                jump = true;
-                myAnim.enabled = false;
-            }
+            HandleMovement();
+            HandleJump();
         }
 
-        //clamping horizontal speed
-        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
-        {
-            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+        ClampSpeed();
+    }
+
+    void Update()
+    {
+        if (playing) {
+             if (playing && Input.GetKeyDown(KeyCode.Tab))
+            {
+                 Debug.Log("Trying to switch " + gameObject + " + " + playing);
+                cam.GetComponent<CinemachineBehavior>().CameraSet();
+             }
         }
 
         AnimationControl();
         JumpAnimControl();
-
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void HandleMovement()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
+            currentScale.x = Mathf.Abs(currentScale.x);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
+            currentScale.x = -Mathf.Abs(currentScale.x);
+        }
+
+        transform.localScale = currentScale;
+    }
+
+    private void HandleJump()
+    {
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !jump)
+        {
+            rb.AddForce(Vector2.up * jumpPower * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            jump = true;
+            myAnim.enabled = false;
+        }
+    }
+
+    private void ClampSpeed()
+    {
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+        {
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("pushable"))
         {
@@ -132,15 +116,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void AnimationControl() {
-
+    void AnimationControl() 
+    {
         if (!jump && playing) 
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
-               myAnim.SetBool("walking", true);
+                myAnim.SetBool("walking", true);
             }
-
-            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+            else {
                 myAnim.SetBool("walking", false);
             }
         } 
@@ -149,16 +132,14 @@ public class PlayerScript : MonoBehaviour
             myAnim.SetBool("walking", false);
             myAnim.SetBool("jumping", true);
         }
-
     }
 
-    void JumpAnimControl() {
+    void JumpAnimControl() 
+    {
         if (rb.velocity.y >= 0) {
-             mySprite.sprite = jumpUp;
-         } else {
-             mySprite.sprite = jumpDown;
-          }
-
+            mySprite.sprite = jumpUp;
+        } else {
+            mySprite.sprite = jumpDown;
+        }
     }
-
 }
