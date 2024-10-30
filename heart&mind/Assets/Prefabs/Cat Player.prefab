@@ -110,6 +110,7 @@ MonoBehaviour:
   idleAnim: {fileID: 7400000, guid: 554cf95413a812642b58cf26b9dd8ad6, type: 2}
   jumpUp: {fileID: 21300000, guid: 10744eb0f3ed7a546bb2cbbc31ebcc09, type: 3}
   jumpDown: {fileID: 21300000, guid: 315d5d1379c1ba240bf7acdf731ea9bb, type: 3}
+  playing: 0
 --- !u!95 &9123098421476691334
 Animator:
   serializedVersion: 5
@@ -266,7 +267,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

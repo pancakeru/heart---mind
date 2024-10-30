@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1968419193089571186}
   - component: {fileID: 5680251520485205079}
   - component: {fileID: 3706907842099600319}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5197738064347801453}
   - component: {fileID: 4718823243639594894}
   - component: {fileID: 4800252404385544784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wolf Player
   m_TagString: Player
   m_Icon: {fileID: 0}
