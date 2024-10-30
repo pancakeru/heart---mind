@@ -13,7 +13,7 @@ public class HeartMechanics : MonoBehaviour
     private Transform mySize;
     private Rigidbody2D rb;
 
-    private float activeDuration = 3;
+    private float activeDuration = 5;
 
     public float angyLevel = 0;
     public float calmLevel = 0;
@@ -27,10 +27,17 @@ public class HeartMechanics : MonoBehaviour
     private bool resetting = false;
     
     private PlayerScript movementScript;
+    private Animator myAnim;
 
     //ref to UI bar
     public Image angyBar;
     public Image calmBar;
+
+    public Sprite angyUp;
+    public Sprite angyDown;
+    public Sprite normalUp;
+    public Sprite normalDown;
+
 
     void Start()
     {
@@ -40,6 +47,7 @@ public class HeartMechanics : MonoBehaviour
 
         //get ref to PlayerScript on obj
         movementScript = this.GetComponent<PlayerScript>();
+        myAnim = this.GetComponent<Animator>();
         
     }
 
@@ -80,11 +88,14 @@ public class HeartMechanics : MonoBehaviour
         if (other.gameObject.CompareTag("Calm Zone")) {
             inZone = false;
         }
+
+        if (angyLevel < 0.5f) {
+            myAnim.SetBool("angy", false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Wall")) {
-            foreach (ContactPoint2D contact in other.contacts)
+         foreach (ContactPoint2D contact in other.contacts)
             {
                 Vector2 normal = contact.normal;
 
@@ -93,9 +104,9 @@ public class HeartMechanics : MonoBehaviour
                 {
                     Grow();
                     activeDuration = 3;
+                    myAnim.SetBool("angy", true);
                 }
             }
-        }
     }
 
 
@@ -125,7 +136,7 @@ public class HeartMechanics : MonoBehaviour
 
     void Grow() {
         angyLevel += 2.5f * Time.deltaTime;
-        //Debug.Log(angyLevel);
+        
 
         float newScaleMagnitude = Mathf.Abs(mySize.localScale.x) + (growthRate * angyLevel * Time.deltaTime);
 
@@ -141,6 +152,9 @@ public class HeartMechanics : MonoBehaviour
 
         if (angyLevel > 1) {
             angyLevel = 1;
+            myAnim.SetBool("angy", true);
+            movementScript.jumpUp = angyUp;
+            movementScript.jumpDown = angyDown;
         }
 
     }
@@ -165,7 +179,7 @@ public class HeartMechanics : MonoBehaviour
             if (calmLevel < 0) {
                 calmLevel = 0;
                 shrunk = false;
-                activeDuration = 3;
+                activeDuration = 5;
                 resetting = false;
             }
         }
@@ -183,11 +197,18 @@ public class HeartMechanics : MonoBehaviour
 
          angyLevel -= 0.25f * Time.deltaTime;
 
+         if (angyLevel < 0.2f) {
+             myAnim.SetBool("angy", false);
+             movementScript.jumpUp = normalUp;
+             movementScript.jumpDown = normalDown;
+         }
+
              if (angyLevel < 0) {
                 angyLevel = 0;
                 grown = false;
-                activeDuration = 3;
+                activeDuration = 5;
                 resetting = false;
+                myAnim.SetBool("angy", false);
             }
         }
 
