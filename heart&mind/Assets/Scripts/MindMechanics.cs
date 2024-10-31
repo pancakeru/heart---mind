@@ -25,6 +25,9 @@ public class MindMechanics : MonoBehaviour
     //inverse movement
     public bool inverse;
 
+    //activated by player
+    private bool canActivate = false;
+
     private GameObject[] players;
     private GameObject wolfPlayer;
 
@@ -91,6 +94,42 @@ public class MindMechanics : MonoBehaviour
           if (Input.GetKeyUp(KeyCode.P)) {
             wolfPlayer.GetComponent<Animator>().SetBool("P", false);
         }
+
+        if (canActivate) {
+            if (Input.GetKey(KeyCode.P)) {
+
+                wolfPlayer.GetComponent<Animator>().SetBool("P", true);
+                wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+                 if(count < limit)
+                 {
+                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
+                grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);                
+                count++;
+                localCount++;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.L)) {
+
+                wolfPlayer.GetComponent<Animator>().SetBool("L", true);
+                wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+                
+                if(count > -limit && localCount > 0)
+                 {
+                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y - realPosChange); 
+                grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y - realScaleChange, grower.transform.localScale.z);
+                count--;
+                localCount--;
+                 }
+
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            canActivate = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -100,44 +139,13 @@ public class MindMechanics : MonoBehaviour
         {
             vCam.Follow = camTarget;
         }
-
-        //make wall grow
-        if(collision.name == "Wolf Player" && Input.GetKey(KeyCode.P))
-        {
-            collision.GetComponent<Animator>().SetBool("P", true);
-
-            if(count < limit)
-            {
-                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
-                grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);                
-                count++;
-                localCount++;
-            }
-
-        } //make wal go down
-        if (collision.name == "Wolf Player" && Input.GetKey(KeyCode.L))
-        {
-            collision.GetComponent<Animator>().SetBool("L", true);
-
-            if(count > -limit && localCount > 0)
-            {
-                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y - realPosChange); 
-                grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y - realScaleChange, grower.transform.localScale.z);
-                count--;
-                localCount--;
-            }
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         //return the camera to the player
         vCam.Follow = collision.gameObject.transform;
-
-        if (collision.gameObject.CompareTag("Player")) {
-            collision.GetComponent<Animator>().SetBool("L", false);
-            collision.GetComponent<Animator>().SetBool("P", false);
-        }
+        canActivate = false;
     }
 
 }
