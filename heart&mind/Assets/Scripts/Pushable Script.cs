@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Cinemachine;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class PushableScript : MonoBehaviour
@@ -25,6 +24,8 @@ public class PushableScript : MonoBehaviour
     private float targetSize;
     private float camSpeed = 2;
     private float camTimer = 3;
+
+    private bool followingCam = false;
 
     [SerializeField] float pushThreshold;
 
@@ -51,7 +52,6 @@ public class PushableScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camTarget.position = Vector3.Lerp(camTarget.position, (catPlayer.transform.position + this.transform.position)/2, Time.deltaTime * camSpeed);
 
         if (catControl.angyLevel < pushThreshold ) {
             canPush = false;
@@ -75,6 +75,7 @@ public class PushableScript : MonoBehaviour
 
         if (catPlayer.GetComponent<PlayerScript>().playing) {
              vCam.m_Lens.OrthographicSize = Mathf.Lerp(vCam.m_Lens.OrthographicSize, targetSize, Time.deltaTime * camSpeed);
+            camTarget.position = Vector3.Lerp(camTarget.position, (catPlayer.transform.position + this.transform.position)/2, Time.deltaTime * camSpeed);
         }
 
     }
@@ -88,7 +89,7 @@ public class PushableScript : MonoBehaviour
     }
 
     void OnCollisionStay2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Player") && canPush) {
+        if (other.gameObject == catPlayer && canPush) {
             vCam.Follow = camTarget;
         }
     }
