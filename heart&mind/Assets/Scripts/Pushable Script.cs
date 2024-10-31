@@ -73,7 +73,9 @@ public class PushableScript : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
 
-        vCam.m_Lens.OrthographicSize = Mathf.Lerp(vCam.m_Lens.OrthographicSize, targetSize, Time.deltaTime * camSpeed);
+        if (catPlayer.GetComponent<PlayerScript>().playing) {
+             vCam.m_Lens.OrthographicSize = Mathf.Lerp(vCam.m_Lens.OrthographicSize, targetSize, Time.deltaTime * camSpeed);
+        }
 
     }
 
