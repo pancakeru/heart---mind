@@ -25,6 +25,9 @@ public class MindMechanics : MonoBehaviour
     //inverse movement
     public bool inverse;
 
+    private GameObject[] players;
+    private GameObject wolfPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +59,14 @@ public class MindMechanics : MonoBehaviour
         //grab virtual camera reference
         vCam = GameObject.FindGameObjectWithTag("vCam").GetComponent<CinemachineVirtualCamera>();
 
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach(GameObject player in players) {
+            if (player.GetComponent<HeartMechanics>() == null) {
+                wolfPlayer = player;
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -72,6 +83,14 @@ public class MindMechanics : MonoBehaviour
             buildBar.fillAmount = 0;
             dissolveBar.fillAmount = -count / 120;
         }
+
+        if (Input.GetKeyUp(KeyCode.L)) {
+            wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+             }
+        
+          if (Input.GetKeyUp(KeyCode.P)) {
+            wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -85,6 +104,8 @@ public class MindMechanics : MonoBehaviour
         //make wall grow
         if(collision.name == "Wolf Player" && Input.GetKey(KeyCode.P))
         {
+            collision.GetComponent<Animator>().SetBool("P", true);
+
             if(count < limit)
             {
                 grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
@@ -92,9 +113,12 @@ public class MindMechanics : MonoBehaviour
                 count++;
                 localCount++;
             }
+
         } //make wal go down
         if (collision.name == "Wolf Player" && Input.GetKey(KeyCode.L))
         {
+            collision.GetComponent<Animator>().SetBool("L", true);
+
             if(count > -limit && localCount > 0)
             {
                 grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y - realPosChange); 
@@ -109,6 +133,11 @@ public class MindMechanics : MonoBehaviour
     {
         //return the camera to the player
         vCam.Follow = collision.gameObject.transform;
+
+        if (collision.gameObject.CompareTag("Player")) {
+            collision.GetComponent<Animator>().SetBool("L", false);
+            collision.GetComponent<Animator>().SetBool("P", false);
+        }
     }
 
 }

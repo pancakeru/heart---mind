@@ -37,6 +37,10 @@ public class HeartMechanics : MonoBehaviour
     public Sprite angyDown;
     public Sprite normalUp;
     public Sprite normalDown;
+    public Sprite calmSprite;
+
+    private SpriteRenderer mySprite;
+    private bool shrinking = false;
 
 
     void Start()
@@ -44,6 +48,7 @@ public class HeartMechanics : MonoBehaviour
         //get rb and transform components
         mySize = this.GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody2D>();
+        mySprite = this.GetComponent<SpriteRenderer>();
 
         //get ref to PlayerScript on obj
         movementScript = this.GetComponent<PlayerScript>();
@@ -112,6 +117,7 @@ public class HeartMechanics : MonoBehaviour
 
     //function for shrinking
     void Shrink() {
+
         //set limit to shrink time
         if (calmLevel < 10) {
             //Decrement x scale
