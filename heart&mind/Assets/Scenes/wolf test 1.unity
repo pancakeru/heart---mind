@@ -920,6 +920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f119348f79a9ab44bacd5e0f1c3c7ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
+  playerPlaying: {fileID: 0}
+  wolfBar: {fileID: 0}
+  catBar: {fileID: 0}
 --- !u!114 &828444088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,6 +1223,7 @@ MonoBehaviour:
   camTarget: {fileID: 0}
   buildBar: {fileID: 0}
   dissolveBar: {fileID: 0}
+  inverse: 0
 --- !u!61 &1351229786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1417,7 +1422,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9833f7d78b659904fa5bffd2db5ecdca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 25d7e2fdce705ae409934de353590f72, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
