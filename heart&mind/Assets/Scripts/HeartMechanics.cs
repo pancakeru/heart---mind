@@ -65,6 +65,10 @@ public class HeartMechanics : MonoBehaviour
             }
         }
 
+        if (rb.velocity.magnitude != 0) {
+            myAnim.SetBool("calm", false);
+        }
+
 
      //  Debug.Log(angyLevel);
 
@@ -112,6 +116,8 @@ public class HeartMechanics : MonoBehaviour
 
     //function for shrinking
     void Shrink() {
+
+        myAnim.SetBool("calm", true);
         //set limit to shrink time
         if (calmLevel < 10) {
             //Decrement x scale

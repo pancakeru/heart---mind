@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "heart_mind.sln"
+    "dotnet.defaultSolution": "heart_mind.sln",
+    "dotnet.preferCSharpExtension": true
 }

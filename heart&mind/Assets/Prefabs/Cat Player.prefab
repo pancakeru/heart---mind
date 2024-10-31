@@ -224,6 +224,7 @@ MonoBehaviour:
   angyDown: {fileID: 1146716589, guid: c9eadcc7836ba8440abc8d1531198a9b, type: 3}
   normalUp: {fileID: 21300000, guid: 10744eb0f3ed7a546bb2cbbc31ebcc09, type: 3}
   normalDown: {fileID: 21300000, guid: 315d5d1379c1ba240bf7acdf731ea9bb, type: 3}
+  calmSprite: {fileID: 574867880, guid: 933fa110d9ddb0f4eb15837f01a34805, type: 3}
 --- !u!1 &8761363898409172580
 GameObject:
   m_ObjectHideFlags: 0
