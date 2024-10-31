@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5146305676203223413}
   - component: {fileID: 678721836935425868}
   m_Layer: 5
-  m_Name: indicator (1)
+  m_Name: dissolve indicator
   m_TagString: calm bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 6532678430605255450}
   - component: {fileID: 3271610207996905264}
   m_Layer: 5
-  m_Name: indicator
+  m_Name: build indicator
   m_TagString: angy bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

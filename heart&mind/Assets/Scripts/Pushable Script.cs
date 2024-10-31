@@ -64,11 +64,13 @@ public class PushableScript : MonoBehaviour
         if (canPush || !colliding) {
             rb.constraints = RigidbodyConstraints2D.None;
 
-            camTimer -= 1 * Time.deltaTime;
+            if (catPlayer.GetComponent<PlayerScript>().playing) {
+                 camTimer -= 1 * Time.deltaTime;
 
-            if (camTimer <= 0) {
-                vCam.Follow = catPlayer.GetComponent<Transform>();
-             }
+                 if (camTimer <= 0) {
+                    vCam.Follow = catPlayer.GetComponent<Transform>();
+                }
+            }
         } else {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }

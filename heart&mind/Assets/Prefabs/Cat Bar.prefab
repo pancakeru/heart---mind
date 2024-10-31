@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7681070730425992200}
   - component: {fileID: 4373860566966584475}
   m_Layer: 5
-  m_Name: indicator (1)
+  m_Name: calm indicator
   m_TagString: calm bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 3713302844858364074}
   - component: {fileID: 2862003978981928072}
   m_Layer: 5
-  m_Name: indicator
+  m_Name: angy indicator
   m_TagString: angy bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
