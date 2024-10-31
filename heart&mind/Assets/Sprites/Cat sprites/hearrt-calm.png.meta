@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 933fa110d9ddb0f4eb15837f01a34805
+guid: 4f6d54bc1d7ffd6439c3c80297a5f301
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart-calm_0
+      name: spritesheet (19)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,8 +137,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a30d9c16cd5d86b47aa05abe513bf1d9
-      internalID: 574867880
+      spriteID: f229ed54849bdca4d853a1ad4f67374e
+      internalID: 1890104014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet (19)_1
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 0
+        width: 747
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be1a825c798efa47b02e25f61256891
+      internalID: 1007105370
       vertices: []
       indices: 
       edges: []
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      heart-calm_0: 574867880
+      spritesheet (19)_0: 1890104014
+      spritesheet (19)_1: 1007105370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
