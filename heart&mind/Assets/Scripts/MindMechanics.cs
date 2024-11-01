@@ -110,8 +110,7 @@ public class MindMechanics : MonoBehaviour
                 localCount++;
                 }
             }
-
-            if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) {
+            else if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) {
 
                 wolfPlayer.GetComponent<Animator>().SetBool("L", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("P", false);
@@ -123,7 +122,11 @@ public class MindMechanics : MonoBehaviour
                 count--;
                 localCount--;
                  }
-
+            }
+            else
+            {
+                wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+                wolfPlayer.GetComponent<Animator>().SetBool("L", false);
             }
         }
     }
@@ -148,6 +151,9 @@ public class MindMechanics : MonoBehaviour
         //return the camera to the player
         vCam.Follow = collision.gameObject.transform;
         canActivate = false;
+
+        wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+        wolfPlayer.GetComponent<Animator>().SetBool("L", false);
     }
 
 }
