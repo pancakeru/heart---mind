@@ -98,8 +98,8 @@ public class MindMechanics : MonoBehaviour
 
     void FixedUpdate() {
          if (canActivate) {
-            if (Input.GetKey(KeyCode.P)) {
-
+            if (Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.UpArrow)) 
+            {
                 wolfPlayer.GetComponent<Animator>().SetBool("P", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("L", false);
                  if(count < limit)
@@ -111,7 +111,7 @@ public class MindMechanics : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.L)) {
+            if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) {
 
                 wolfPlayer.GetComponent<Animator>().SetBool("L", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("P", false);
