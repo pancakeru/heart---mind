@@ -94,8 +94,10 @@ public class MindMechanics : MonoBehaviour
           if (Input.GetKeyUp(KeyCode.P)) {
             wolfPlayer.GetComponent<Animator>().SetBool("P", false);
         }
+    }
 
-        if (canActivate) {
+    void FixedUpdate() {
+         if (canActivate) {
             if (Input.GetKey(KeyCode.P)) {
 
                 wolfPlayer.GetComponent<Animator>().SetBool("P", true);
