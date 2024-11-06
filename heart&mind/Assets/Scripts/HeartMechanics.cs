@@ -70,7 +70,7 @@ public class HeartMechanics : MonoBehaviour
         }
 
 
-     //  Debug.Log(angyLevel);
+      //  Debug.Log(rb.velocity.magnitude);
 
        angyBar.fillAmount = angyLevel / 1;
        calmBar.fillAmount = calmLevel / 10;
@@ -78,10 +78,16 @@ public class HeartMechanics : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Calm Zone")) {
+            inZone = true;
+        }
+    }
+
     //trigger stay to check if in calm zone
     void OnTriggerStay2D(Collider2D other) {
         //if in zone and not moving, call shrink
-        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude == 0 && !resetting && !grown) {
+        if (other.gameObject.CompareTag("Calm Zone") && rb.velocity.magnitude <= 0.5f && !resetting && !grown) {
             inZone = true;
             Shrink();
         }
@@ -91,6 +97,7 @@ public class HeartMechanics : MonoBehaviour
         //start growing again after a certain amt of time once out of the zone
         if (other.gameObject.CompareTag("Calm Zone")) {
             inZone = false;
+         //   Debug.Log("exiting");
         }
 
         if (angyLevel < 0.5f) {

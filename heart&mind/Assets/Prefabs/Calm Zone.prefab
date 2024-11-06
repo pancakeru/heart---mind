@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7563762847266884087}
   - component: {fileID: 7440100991623032380}
   - component: {fileID: 7856843279589416306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Calm Zone
   m_TagString: Calm Zone
   m_Icon: {fileID: 0}

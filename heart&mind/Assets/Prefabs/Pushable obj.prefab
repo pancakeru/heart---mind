@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9034989179218787709}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CamTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1733051947767024207}
   - component: {fileID: 5242919156104242284}
   - component: {fileID: 5593184589978464654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pushable obj
   m_TagString: pushable
   m_Icon: {fileID: 0}
