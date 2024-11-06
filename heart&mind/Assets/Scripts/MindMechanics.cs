@@ -54,7 +54,7 @@ public class MindMechanics : MonoBehaviour
         //set initial height of wall
         for (int i = 0; i < initialSize; i++)
         {
-            grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
+            grower.transform.localPosition = new Vector3(grower.transform.localPosition.x, grower.transform.localPosition.y + realPosChange);
             grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);
             localCount++;
         }
@@ -104,7 +104,7 @@ public class MindMechanics : MonoBehaviour
                 wolfPlayer.GetComponent<Animator>().SetBool("L", false);
                  if(count < limit)
                  {
-                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y + realPosChange);
+                grower.transform.localPosition = new Vector3(grower.transform.localPosition.x, grower.transform.localPosition.y + realPosChange);
                 grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y + realScaleChange, grower.transform.localScale.z);                
                 count++;
                 localCount++;
@@ -117,7 +117,7 @@ public class MindMechanics : MonoBehaviour
                 
                 if(count > -limit && localCount > 0)
                  {
-                grower.transform.position = new Vector3(grower.transform.position.x, grower.transform.position.y - realPosChange); 
+                grower.transform.localPosition = new Vector3(grower.transform.localPosition.x, grower.transform.localPosition.y - realPosChange); 
                 grower.transform.localScale = new Vector3(grower.transform.localScale.x, grower.transform.localScale.y - realScaleChange, grower.transform.localScale.z);
                 count--;
                 localCount--;
