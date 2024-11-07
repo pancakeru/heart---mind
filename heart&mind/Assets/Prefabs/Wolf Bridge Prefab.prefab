@@ -375,8 +375,10 @@ MonoBehaviour:
   rateOfChange: 1
   initialSize: 0
   camTarget: {fileID: 8445166837584794376}
+  camTargSize: 12
   buildBar: {fileID: 0}
   dissolveBar: {fileID: 0}
+  inverse: 0
 --- !u!1 &4666625764673380287
 GameObject:
   m_ObjectHideFlags: 0
