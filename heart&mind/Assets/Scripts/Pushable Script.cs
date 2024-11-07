@@ -52,6 +52,7 @@ public class PushableScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // Debug.Log(colliding);
 
         if (catControl.angyLevel < pushThreshold ) {
             canPush = false;
