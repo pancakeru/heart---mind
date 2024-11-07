@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\MindMechanics.cs" />
     <Compile Include="Assets\Scripts\HeartMechanics.cs" />
     <Compile Include="Assets\Scripts\PlayerSwitch.cs" />
+    <Compile Include="Assets\Scripts\GoThroughBox.cs" />
     <Compile Include="Assets\Scripts\DialogueController.cs" />
     <Compile Include="Assets\Scripts\Pushable Script.cs" />
     <Compile Include="Assets\Scripts\sceneManagerScript.cs" />
