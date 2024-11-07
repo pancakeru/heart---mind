@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\PlayerSwitch.cs" />
     <Compile Include="Assets\Scripts\DialogueController.cs" />
     <Compile Include="Assets\Scripts\Pushable Script.cs" />
+    <Compile Include="Assets\Scripts\sceneManagerScript.cs" />
     <Compile Include="Assets\Scripts\Extensions\LockCameraY.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
   </ItemGroup>
