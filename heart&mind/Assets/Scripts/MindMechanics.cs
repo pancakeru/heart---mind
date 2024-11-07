@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class MindMechanics : MonoBehaviour
 {
 
-    [SerializeField] private GameObject grower; 
+    [SerializeField] private GameObject grower;
     [SerializeField] private float rateOfChange;
     [SerializeField] private float initialSize;
     [SerializeField] private Transform camTarget;
+    [SerializeField] private float camTargSize = 12f;
     private CinemachineVirtualCamera vCam; 
     private float localCount; //local count keeps track of growth of specific wall, to make sure it doesn't go into the negative
     private static float limit = 120f;
@@ -134,6 +135,7 @@ public class MindMechanics : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             canActivate = true;
+            vCam.m_Lens.OrthographicSize = camTargSize;
         }
     }
 
@@ -150,6 +152,7 @@ public class MindMechanics : MonoBehaviour
     {
         //return the camera to the player
         vCam.Follow = collision.gameObject.transform;
+        vCam.m_Lens.OrthographicSize = 12f;
         canActivate = false;
 
         wolfPlayer.GetComponent<Animator>().SetBool("P", false);
