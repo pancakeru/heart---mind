@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/wolf tutorial.unity
     guid: f7babed4086a0714698b5ae5bdd03e4b
   - enabled: 1
+    path: Assets/Scenes/heart lvl 1.unity
+    guid: 60ad4090de09ed647808523ce496dc45
+  - enabled: 1
+    path: Assets/Scenes/wolf level 1.unity
+    guid: 65039dd4847afdf48b73763706dee3a7
+  - enabled: 1
     path: Assets/Scenes/Final Level.unity
     guid: f424cc97552ddd04ca14bfdae830bc67
   m_configObjects: {}
