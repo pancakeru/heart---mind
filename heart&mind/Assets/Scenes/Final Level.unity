@@ -384,7 +384,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2419904381583983248, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.497419
+      value: 4.9359894
       objectReference: {fileID: 0}
     - target: {fileID: 2419904381583983248, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419904381583983248, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.4523
+      value: 15.7685
       objectReference: {fileID: 0}
     - target: {fileID: 2419904381583983248, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
       propertyPath: m_LocalPosition.z
@@ -943,6 +943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 456954403}
     - target: {fileID: 1428140850485146885, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
+      propertyPath: camTargSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428140850485146885, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: dissolveBar
       value: 
       objectReference: {fileID: 2556253093536512969}
@@ -993,6 +997,14 @@ PrefabInstance:
     - target: {fileID: 5505519102740573563, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -94.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445166837584794376, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -52.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445166837584794376, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
