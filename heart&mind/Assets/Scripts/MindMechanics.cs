@@ -18,6 +18,7 @@ public class MindMechanics : MonoBehaviour
     private float realPosChange;
     private float realScaleChange;
     private static float count; //keeps track of growth of all walls
+    private PlayerScript playerReference;
 
     //ref to UI bar
     public Image buildBar;
@@ -88,18 +89,18 @@ public class MindMechanics : MonoBehaviour
             dissolveBar.fillAmount = -count / 120;
         }
 
-        if (Input.GetKeyUp(KeyCode.L)) {
+        if ((Input.GetKeyUp(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) && playerReference.playing) {
             wolfPlayer.GetComponent<Animator>().SetBool("L", false);
              }
         
-          if (Input.GetKeyUp(KeyCode.P)) {
+          if ((Input.GetKeyUp(KeyCode.P) || Input.GetKey(KeyCode.UpArrow))  && playerReference.playing) {
             wolfPlayer.GetComponent<Animator>().SetBool("P", false);
         }
     }
 
     void FixedUpdate() {
          if (canActivate) {
-            if (Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.UpArrow)) 
+            if (Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.UpArrow) && playerReference.playing) 
             {
                 wolfPlayer.GetComponent<Animator>().SetBool("P", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("L", false);
@@ -111,7 +112,7 @@ public class MindMechanics : MonoBehaviour
                 localCount++;
                 }
             }
-            else if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) {
+            else if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow) && playerReference.playing) {
 
                 wolfPlayer.GetComponent<Animator>().SetBool("L", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("P", false);
@@ -133,9 +134,10 @@ public class MindMechanics : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (collision.gameObject.CompareTag("Player")  && collision.gameObject.GetComponent<PlayerScript>().playing) {
             canActivate = true;
             vCam.m_Lens.OrthographicSize = camTargSize;
+            playerReference = collision.GetComponent<PlayerScript>();
         }
     }
 
