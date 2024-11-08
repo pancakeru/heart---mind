@@ -135,7 +135,7 @@ public class MindMechanics : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")  && collision.gameObject.GetComponent<PlayerScript>().playing) {
+        if (collision.name == "Wolf Player" && collision.gameObject.GetComponent<PlayerScript>().playing) {
             canActivate = true;
             vCam.m_Lens.OrthographicSize = camTargSize;
             playerReference = collision.gameObject;
@@ -149,18 +149,22 @@ public class MindMechanics : MonoBehaviour
         {
             vCam.Follow = camTarget;
             vCam.m_Lens.OrthographicSize = camTargSize;
+            playerReference = collision.gameObject;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         //return the camera to the player
-        vCam.Follow = collision.gameObject.transform;
-        vCam.m_Lens.OrthographicSize = 12f;
-        canActivate = false;
+        if(collision.name == "Wolf Player")
+        {
+            vCam.Follow = collision.gameObject.transform;
+            vCam.m_Lens.OrthographicSize = 12f;
+            canActivate = false;
 
-        wolfPlayer.GetComponent<Animator>().SetBool("P", false);
-        wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+            wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+            wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+        }
     }
 
 }
