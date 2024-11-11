@@ -94,7 +94,10 @@ public class PushableScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) {
             colliding = true;
             camTimer = 3;
-            mySprite.sprite = beingPushed;
+
+            if (!catControl.resetting && !catControl.inZone) {
+                mySprite.sprite = beingPushed;
+            }
         }
     }
 
