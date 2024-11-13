@@ -27,6 +27,10 @@ public class PushableScript : MonoBehaviour
 
     private bool followingCam = false;
 
+    public Sprite idle;
+    public Sprite beingPushed;
+    private SpriteRenderer mySprite;
+
     [SerializeField] float pushThreshold;
 
     void Start()
@@ -46,7 +50,9 @@ public class PushableScript : MonoBehaviour
         }
 
         vCam = GameObject.FindGameObjectWithTag("vCam").GetComponent<CinemachineVirtualCamera>();
-        
+
+        mySprite = this.GetComponent<SpriteRenderer>();
+        mySprite.sprite = idle;
     }
 
     // Update is called once per frame
@@ -88,6 +94,10 @@ public class PushableScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) {
             colliding = true;
             camTimer = 3;
+
+            if (!catControl.resetting && !catControl.inZone) {
+                mySprite.sprite = beingPushed;
+            }
         }
     }
 
@@ -100,6 +110,7 @@ public class PushableScript : MonoBehaviour
     void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player")) {
             colliding = false;
+            mySprite.sprite = idle;
         }
     }
 

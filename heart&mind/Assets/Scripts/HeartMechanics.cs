@@ -20,11 +20,11 @@ public class HeartMechanics : MonoBehaviour
 
     private float shrinkRate = 0.1f;
     private float growthRate = 20f;
-    private bool inZone = false;
+    public bool inZone = false;
 
     private bool shrunk = false;
     private bool grown = false;
-    private bool resetting = false;
+    public bool resetting = false;
     
     private PlayerScript movementScript;
     private Animator myAnim;

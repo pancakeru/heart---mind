@@ -108,8 +108,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 8917b0dda64219d46a517e582a88b3ae, type: 3}
-  m_Color: {r: 1, g: 0.5377357, b: 0.5377357, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ee793cc6a8c338442890900ed2c39c09, type: 3}
+  m_Color: {r: 1, g: 0.93396217, b: 0.9482296, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -204,4 +204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTarget: {fileID: 9034989179218787709}
+  idle: {fileID: 21300000, guid: ee793cc6a8c338442890900ed2c39c09, type: 3}
+  beingPushed: {fileID: 21300000, guid: 301a147b554fb6e4fbccb592623488c1, type: 3}
   pushThreshold: 0.9
