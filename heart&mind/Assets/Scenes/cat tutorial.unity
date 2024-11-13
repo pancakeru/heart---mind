@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d7c23731f85ee9f458567f434bc3f65c, type: 3}
     - target: {fileID: 2020245726255645343, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
       propertyPath: speed
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3051905063104392005, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
       propertyPath: m_Name
@@ -2577,7 +2577,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7d67c6d036fbc734d88803479834172e, type: 3}
     - target: {fileID: 2020245726255645343, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
       propertyPath: speed
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3051905063104392005, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
       propertyPath: m_Name
@@ -3048,6 +3048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2020245726255645343, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
+      propertyPath: speed
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3051905063104392005, guid: 960a873981bbdfd49b82c0ed34bbe241, type: 3}
       propertyPath: m_Name
       value: bg item prefab
