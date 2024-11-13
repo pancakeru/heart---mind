@@ -213,17 +213,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4039993452662929672, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fbce6382d9db98b418b3eca490c554a4, type: 3}
+    - target: {fileID: 4039993452662929672, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 73.9
+      value: 58.89
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -273,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8108996916977432491, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0054136ed3d4a144eb56ef97b6da0ef8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1003,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 969095538228603510, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.91
+      value: -12.04
       objectReference: {fileID: 0}
     - target: {fileID: 969095538228603510, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1168,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1428140850485146885, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: initialSize
-      value: 90
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2196966022153294547, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3173,7 +3185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 969095538228603510, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.91
+      value: -12.15
       objectReference: {fileID: 0}
     - target: {fileID: 1428140850485146885, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: camTargSize
@@ -3525,7 +3537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1428140850485146885, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: initialSize
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2196966022153294547, guid: bb17c15f3809f4b4bb488d7f3ce8c7e1, type: 3}
       propertyPath: m_LocalPosition.x

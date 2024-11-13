@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class PlayerScript : MonoBehaviour
     //character switching
     public bool playing;
     private GameObject cam;
+
+    //audio Stuff
+    public AudioSource walk;
+    public AudioSource jumpAudio;
+    public AudioSource land;
+
 
     void Start()
     {
@@ -92,6 +99,7 @@ public class PlayerScript : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !jump)
         {
+            jumpAudio.Play();
             rb.AddForce(Vector2.up * jumpPower * Time.fixedDeltaTime, ForceMode2D.Impulse);
             jump = true;
             myAnim.enabled = false;
@@ -110,6 +118,10 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("pushable"))
         {
+            if (jump)
+            {
+                land.Play();
+            }
             jump = false;
             myAnim.SetBool("jumping", false);
             myAnim.enabled = true;
