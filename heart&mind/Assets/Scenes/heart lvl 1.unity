@@ -1795,6 +1795,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8036631027804945115, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b1be0664deef2f4cbec161f1f48dbfc, type: 3}
+    - target: {fileID: 8036631027804945115, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
