@@ -6,16 +6,26 @@ public class background : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] float scrollSpeed;
+   public float speed;
+   private GameObject[] playerObj;
 
-    void Start()
-    {
-        
+   void Start() {
+    playerObj = GameObject.FindGameObjectsWithTag("Player");
+
+   }
+
+   void Update() {
+    foreach(GameObject player in playerObj) {
+        if (Input.GetKey(KeyCode.D)) {
+            this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.A)) {
+            this.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   }
+
 }
