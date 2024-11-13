@@ -18,6 +18,7 @@ public class MindMechanics : MonoBehaviour
     private float realPosChange;
     private float realScaleChange;
     private static float count; //keeps track of growth of all walls
+    private GameObject playerReference;
 
     //ref to UI bar
     public Image buildBar;
@@ -88,21 +89,22 @@ public class MindMechanics : MonoBehaviour
             dissolveBar.fillAmount = -count / 120;
         }
 
-        if (Input.GetKeyUp(KeyCode.L)) {
+        if ((Input.GetKeyUp(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) && playerReference.GetComponent<PlayerScript>().playing) {
             wolfPlayer.GetComponent<Animator>().SetBool("L", false);
              }
         
-          if (Input.GetKeyUp(KeyCode.P)) {
+          if ((Input.GetKeyUp(KeyCode.P) || Input.GetKey(KeyCode.UpArrow))  && playerReference.GetComponent<PlayerScript>().playing) {
             wolfPlayer.GetComponent<Animator>().SetBool("P", false);
         }
     }
 
     void FixedUpdate() {
          if (canActivate) {
-            if (Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.UpArrow)) 
+            if ((Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.UpArrow)) && playerReference.GetComponent<PlayerScript>().playing) 
             {
                 wolfPlayer.GetComponent<Animator>().SetBool("P", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+                Debug.Log(playerReference.GetComponent<PlayerScript>().playing);
                  if(count < limit)
                  {
                 grower.transform.localPosition = new Vector3(grower.transform.localPosition.x, grower.transform.localPosition.y + realPosChange);
@@ -111,7 +113,7 @@ public class MindMechanics : MonoBehaviour
                 localCount++;
                 }
             }
-            else if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) {
+            else if ((Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) && playerReference.GetComponent<PlayerScript>().playing) {
 
                 wolfPlayer.GetComponent<Animator>().SetBool("L", true);
                 wolfPlayer.GetComponent<Animator>().SetBool("P", false);
@@ -133,9 +135,10 @@ public class MindMechanics : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (collision.name == "Wolf Player" && collision.gameObject.GetComponent<PlayerScript>().playing) {
             canActivate = true;
             vCam.m_Lens.OrthographicSize = camTargSize;
+            playerReference = collision.gameObject;
         }
     }
 
@@ -145,18 +148,23 @@ public class MindMechanics : MonoBehaviour
         if(collision.name == "Wolf Player" && collision.GetComponent<PlayerScript>().playing)
         {
             vCam.Follow = camTarget;
+            vCam.m_Lens.OrthographicSize = camTargSize;
+            playerReference = collision.gameObject;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         //return the camera to the player
-        vCam.Follow = collision.gameObject.transform;
-        vCam.m_Lens.OrthographicSize = 12f;
-        canActivate = false;
+        if(collision.name == "Wolf Player")
+        {
+            vCam.Follow = collision.gameObject.transform;
+            vCam.m_Lens.OrthographicSize = 12f;
+            canActivate = false;
 
-        wolfPlayer.GetComponent<Animator>().SetBool("P", false);
-        wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+            wolfPlayer.GetComponent<Animator>().SetBool("P", false);
+            wolfPlayer.GetComponent<Animator>().SetBool("L", false);
+        }
     }
 
 }
