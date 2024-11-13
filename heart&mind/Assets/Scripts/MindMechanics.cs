@@ -88,14 +88,6 @@ public class MindMechanics : MonoBehaviour
             buildBar.fillAmount = 0;
             dissolveBar.fillAmount = -count / 120;
         }
-
-        if ((Input.GetKeyUp(KeyCode.L) || Input.GetKey(KeyCode.DownArrow)) && playerReference.GetComponent<PlayerScript>().playing) {
-            wolfPlayer.GetComponent<Animator>().SetBool("L", false);
-             }
-        
-          if ((Input.GetKeyUp(KeyCode.P) || Input.GetKey(KeyCode.UpArrow))  && playerReference.GetComponent<PlayerScript>().playing) {
-            wolfPlayer.GetComponent<Animator>().SetBool("P", false);
-        }
     }
 
     void FixedUpdate() {
