@@ -73,6 +73,10 @@ public class PlayerScript : MonoBehaviour
                 cam.GetComponent<CinemachineBehavior>().CameraSet();
              }
         }
+        else
+        {
+            walk.volume = 0;
+        }
 
         AnimationControl();
         JumpAnimControl();
@@ -84,13 +88,19 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
             currentScale.x = Mathf.Abs(currentScale.x);
+            walk.volume = 1;
         }
-
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
             currentScale.x = -Mathf.Abs(currentScale.x);
+            walk.volume = 1;
         }
+        if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            walk.volume = 0;
+        }
+
 
         transform.localScale = currentScale;
     }
