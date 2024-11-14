@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\HeartMechanics.cs" />
     <Compile Include="Assets\Scripts\PlayerSwitch.cs" />
     <Compile Include="Assets\Scripts\TestingSceneChanger.cs" />
+    <Compile Include="Assets\Scripts\SnapshotScript.cs" />
     <Compile Include="Assets\Scripts\GoThroughBox.cs" />
     <Compile Include="Assets\Scripts\DialogueController.cs" />
     <Compile Include="Assets\Scripts\background.cs" />
