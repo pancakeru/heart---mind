@@ -3333,31 +3333,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[0]
-      value: "\u201Ci really don\u2019t wanna do this assignment\u2026\u201D"
+      value: "i really don\u2019t wanna do this assignment\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[1]
-      value: "\u201Ci don\u2019t feel very motivated.\u201D"
+      value: "i don\u2019t feel very motivated."
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[2]
-      value: "\u201Cmaybe I can find something more interesting and fun to do!\u201D "
+      value: maybe I can find something more interesting and fun to do!
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[3]
-      value: "\u201Cagh, stupid box!!! how am i supposed to get past this??\u201D"
+      value: agh, stupid box!!! how am i supposed to get past this??
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[4]
-      value: " \u201Ctime for brute force!\u201D "
+      value: time for brute force!
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[5]
-      value: "\u201Coh, that was easier than expected!\u201D"
+      value: oh, that was easier than expected!
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[6]
-      value: "\u201Ci have so many other things i could do instead\u2026\u201D"
+      value: "i have so many other things i could do instead\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: characterSpeaker.Array.size
