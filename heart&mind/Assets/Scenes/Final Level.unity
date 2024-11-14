@@ -1512,13 +1512,113 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Box Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: sectionDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[0]
+      value: "LET\u2019S FACE IT. WE CAN\u2019T KICK EACH OTHER OUT."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[1]
+      value: "yeah\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[2]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[3]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[4]
+      value: "if we\u2019re stuck together, forever, we might as well figure out
+        SOMETHING that works "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[5]
+      value: "AGREED. BUT IT DOESN\u2019T MEAN I\u2019M ALWAYS GONNA LIKE GETTING
+        ALONG WITH YOU."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[6]
+      value: "you force me to do things i don\u2019t like to do, so i\u2019m not
+        going to always be happy about it, but i guess the more i fight you the more
+        we both end up hurt."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[7]
+      value: "\u2026 WELL PUT."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[8]
+      value: "let\u2019s do this!!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[0]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[1]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[2]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[3]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[4]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[5]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[6]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[7]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[8]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[9]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 115.0034
+      objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.09
+      value: -395.8
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.87
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4875,63 +4975,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
---- !u!1001 &1638039548
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3045744797676528128, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_Name
-      value: Dialogue Box Prefab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -324.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
 --- !u!1001 &1645704278
 PrefabInstance:
   m_ObjectHideFlags: 0
