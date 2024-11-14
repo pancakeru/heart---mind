@@ -279,7 +279,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: dd431a093c6041f45a3bafb8243c3286, type: 2}
@@ -352,6 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angyLevel: 0
   calmLevel: 0
+  inZone: 0
+  resetting: 0
   angyBar: {fileID: 0}
   calmBar: {fileID: 0}
   angyUp: {fileID: 1966990209, guid: c9eadcc7836ba8440abc8d1531198a9b, type: 3}
