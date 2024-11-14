@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catFont: {fileID: 12800000, guid: 4d85733482354f54e9a3e55ea8c16d18, type: 3}
-  wolfFont: {fileID: 12800000, guid: 103d250a9a97ecd4aba21aceb846b7c6, type: 3}
+  wolfFont: {fileID: 12800000, guid: 796b4508576077c4daf1b6816dae7f13, type: 3}
   catColor: {r: 0.76470596, g: 0.18039216, b: 0.34509805, a: 1}
   wolfColor: {r: 0.25490198, g: 0.45098042, b: 0.7607844, a: 1}
   letterDelay: 0.05
