@@ -2691,7 +2691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6848091770823056002, guid: 1bfd64cb629fdb247b15f7261b3653f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27
+      value: -18.9
       objectReference: {fileID: 0}
     - target: {fileID: 6848091770823056002, guid: 1bfd64cb629fdb247b15f7261b3653f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3322,6 +3322,66 @@ PrefabInstance:
     - target: {fileID: 3045744797676528128, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_Name
       value: Dialogue Box Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: sectionDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[0]
+      value: "\u201Ci really don\u2019t wanna do this assignment\u2026\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[1]
+      value: "\u201Ci don\u2019t feel very motivated.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[2]
+      value: "\u201Cmaybe I can find something more interesting and fun to do!\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[3]
+      value: "\u201Cagh, stupid box!!! how am i supposed to get past this??\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[4]
+      value: " \u201Ctime for brute force!\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[5]
+      value: "\u201Coh, that was easier than expected!\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[6]
+      value: "\u201Ci have so many other things i could do instead\u2026\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[1]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[3]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[4]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[5]
+      value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[6]
+      value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.x
