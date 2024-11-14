@@ -562,12 +562,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -304.7
+      value: -327.8
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.9
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4119365437297974507, guid: 2b73e7f6d84832b4898b36a6333f150d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -819,6 +823,10 @@ PrefabInstance:
     - target: {fileID: 4656350018619393411, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
@@ -1339,6 +1347,10 @@ PrefabInstance:
     - target: {fileID: 4656350018619393411, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
@@ -1952,6 +1964,10 @@ PrefabInstance:
     - target: {fileID: 4656350018619393411, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
@@ -2752,6 +2768,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
       value: Pushable obj (4)
@@ -3322,7 +3342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6848091770823056002, guid: 1bfd64cb629fdb247b15f7261b3653f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -47.5
+      value: -38.9
       objectReference: {fileID: 0}
     - target: {fileID: 6848091770823056002, guid: 1bfd64cb629fdb247b15f7261b3653f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3928,6 +3948,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
       value: Pushable obj (8)
@@ -4254,11 +4278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -327.4
+      value: -462.9
       objectReference: {fileID: 0}
     - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.4
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 4971407906738690137, guid: d74cc48d4ceddac45aa66ea1195482da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4475,6 +4499,10 @@ PrefabInstance:
     - target: {fileID: 4656350018619393411, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
@@ -5094,6 +5122,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
       value: Pushable obj (10)
@@ -5167,6 +5199,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
       value: Pushable obj
@@ -5239,6 +5275,10 @@ PrefabInstance:
     - target: {fileID: 4656350018619393411, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593184589978464654, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
+      propertyPath: pushThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6323446955501117208, guid: 714ec41834f79984292cdf1ff8ca68be, type: 3}
       propertyPath: m_Name
