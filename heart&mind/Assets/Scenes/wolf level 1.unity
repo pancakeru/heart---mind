@@ -5444,6 +5444,160 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2419904381583983248, guid: bbf1740da77d20f4aa77a6ae81420841, type: 3}
   m_PrefabInstance: {fileID: 475140883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1530372510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3045744797676528128, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Box Prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[0]
+      value: THERE ARE SO MANY DISTRACTIONS TO BLOCK! THIS IS HARD TO MANAGE.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[1]
+      value: WHERE AM I SUPPOSED TO DIRECT MY WILLPOWER?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[2]
+      value: "IF ONLY OUR EMOTIONS WERE A BIT MORE STABLE, IT\u2019D MAKE IT EASIER. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[4]
+      value: "MAYBE I\u2019M NOT DISCIPLINE ENOUGH? YEAH\u2026 MAYBE THAT\u2019S
+        THE PROBLEM."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[0]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[2]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[4]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[5]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[6]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[7]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[8]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[9]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: characterSpeaker.Array.data[10]
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.5911255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.662987
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -241.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
 --- !u!1001 &1543661048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6127,6 +6281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4465104893010464020, guid: 3ecc72ebcda12b54e83a804ec308b548, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5442039187338971822, guid: 3ecc72ebcda12b54e83a804ec308b548, type: 3}
       propertyPath: m_Name
       value: Testing Build Scene Manager
@@ -7342,7 +7500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.size
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[0]
@@ -7350,47 +7508,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[1]
-      value: WHY DID WE EVEN AGREE TO SIT HERE? WE KNEW IT WAS GONNA BE HARDER TO
-        WORK!
+      value: WHY DID WE EVEN AGREE TO SIT HERE? WE KNEW IT WOULD BE HARDER TO WORK!
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[2]
-      value: "WE CANNOT BE DRAWING SOMETHING SUPER ARBITRARY ANYWAY, WE NEED TO GET
-        THE FOUNDATIONS DONE. IT\u2019S NOT FUN BUT IT\u2019S NECESSARY."
+      value: 'WE CANNOT BE DRAWING SOMETHING SUPER ARBITRARY ANYWAY, '
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[3]
-      value: WHY IS IT GETTING HARDER TO GET MYSELF TO DO WHAT I KNOW I NEED (AND
-        WHAT I WANT) TO DO?
+      value: "WE NEED TO GET THE FOUNDATIONS DONE. IT\u2019S NOT FUN BUT IT\u2019S
+        NECESSARY."
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[4]
+      value: WHY IS IT GETTING HARDER TO GET MYSELF TO DO WHAT I KNOW I NEED AND
+        WANT TO DO?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[5]
       value: "MAYBE I\u2019M NOT DISCIPLINE ENOUGH? YEAH\u2026 MAYBE THAT\u2019S
         THE PROBLEM."
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: textSections.Array.data[5]
-      value: 'THERE HAS TO BE ONLY 1 WAY TO SOLVE THIS. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[6]
-      value: "I GUESS\u2026. NOT. HUH."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[7]
-      value: THERE ARE SO MANY DISTRACTIONS TO BLOCK! THIS IS HARD TO MANAGE.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: textSections.Array.data[8]
-      value: WHERE AM I SUPPOSED TO DIRECT MY WILLPOWER?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
-      propertyPath: textSections.Array.data[9]
       value: "IF ONLY OUR EMOTIONS WERE A BIT MORE STABLE, IT\u2019D MAKE IT EASIER. "
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: textSections.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: characterSpeaker.Array.size
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8589721780933135959, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: textSections.Array.data[10]
@@ -7434,15 +7591,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalScale.x
-      value: 22.032173
+      value: 11.5911255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.662987
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.0001
+      value: 44.221
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: 2.3105
       objectReference: {fileID: 0}
     - target: {fileID: 9119721272128961482, guid: 810d062a7b01c844e86e024f6ef6cc41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7723,6 +7884,7 @@ SceneRoots:
   - {fileID: 47735040}
   - {fileID: 828444086}
   - {fileID: 2616471600592282891}
+  - {fileID: 1530372510}
   - {fileID: 127151884}
   - {fileID: 1653145499}
   - {fileID: 1451769678}
