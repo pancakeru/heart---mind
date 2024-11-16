@@ -17,6 +17,37 @@ public class SnapshotScript : MonoBehaviour
     void Start()
     {
         player = GetComponent<VideoPlayer>();
+
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 1.mp4");
+            player.Play();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 2.mp4");
+            player.Play();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 3.mp4");
+            player.Play();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 4.mp4");
+            player.Play();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 8)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 5.mp4");
+            player.Play();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 10)
+        {
+            player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Snapshot 6.mp4");
+            player.Play();
+        }
     }
 
     // Update is called once per frame
